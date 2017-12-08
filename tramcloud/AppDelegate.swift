@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        AMapServices.shared().apiKey = "5dc5cd0d8f46b98e2468caf44be0fc08"
+        self.window = UIWindow(frame:UIScreen.main.bounds)
+        
+        //let rootVC = TramTabBarController()
+        //let sb=UIStoryboard(name: "Main", bundle: nil)
+        //let vc=sb.instantiateViewController(withIdentifier: "TramUIViewController")
+        //let nav = UINavigationController(rootViewController:TramTabBarController())
+        self.window?.rootViewController = TramTabBarController()
+        //self.window!.makeKeyAndVisible()
         return true
     }
 
