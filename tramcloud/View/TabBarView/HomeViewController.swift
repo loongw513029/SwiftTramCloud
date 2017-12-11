@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
-class HomeViewController: TramUIViewController {
+import Charts
+import SnapKit
+class HomeViewController: TramUIViewController,ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "车辆云管理"
@@ -25,6 +27,7 @@ class HomeViewController: TramUIViewController {
         print(bounds.height)
         let chartView = UIKitUtil.CreateUiView(self.view,x: 0, y: 0, width: bounds.width, height: bounds.height*0.32, backgroundColor: "0b9bee")
         self.view.addSubview(chartView)
+        initScrollView(chartView)
         //中间车辆总数，在线数量，线路条数，异常行为
         let navNumberView=UIKitUtil.CreateUiView(self.view,x:0,y:bounds.height*0.32,width:bounds.width,height:bounds.height*0.13,backgroundColor:"ffffff")
         let labelWidth = bounds.width/4-1
@@ -87,6 +90,112 @@ class HomeViewController: TramUIViewController {
         let alarmtxtButton = UIKitUtil.CreateUiButton(alarmView, text: "车辆报警", x:0,y:texty,width:bottomwidth,height:bottomheight/2, textColor: "000000", textSize: 13, tag: 8)
         alarmtxtButton.addTarget(self, action: #selector(Handle(_:)), for: .touchUpInside)
     }
+    func initScrollView(_ view:UIView){
+        let scrollView = UIScrollView()
+        scrollView.frame = view.bounds
+        scrollView.contentSize = CGSize(width: view.bounds.width * 2,height: view.bounds.height)
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.scrollsToTop = false
+        for i in 0..<2{
+           createChartView(scrollView,i)
+        //scrollView.addSubview(myViewController.view)
+        }
+        view.addSubview(scrollView)
+    }
+    
+    func createChartView(_ scrollView:UIScrollView,_ index:Int){
+        var x:CGFloat = 0;
+        if(index>0){
+            x = bounds.width * CGFloat(index)
+        }
+        var lineChart = LineChartView.init(frame:CGRect(x:x,y:0,width:bounds.width,height:bounds.height*0.32))
+        lineChart.delegate = self
+        lineChart.backgroundColor = UIColor.hexStringToColor(hexString: "0b9bee")
+        scrollView.addSubview(lineChart)
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+    
+        setChart(lineChart,months, values: unitsSold)
+    }
+    
+    func setChart(_ lineChart:LineChartView,_ dataPoints: [String], values: [Double]) {
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+        let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
+            dataEntries.append(dataEntry)
+        }
+    
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "单位：万元")
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        
+        lineChart.data = lineChartData
+        //右下角图标描述
+        lineChart.chartDescription?.text = "ChartView"
+        
+        //左下角图例
+        //        lineChart.legend.formSize = 30
+        //        lineChart.legend.form = .square
+        lineChart.legend.textColor = UIColor.black
+        
+        //设置X轴坐标
+        lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
+        lineChart.xAxis.granularity = 1.0
+        lineChart.xAxis.labelPosition = .bottom
+        lineChart.xAxis.drawGridLinesEnabled = false
+        lineChart.xAxis.axisLineColor = UIColor.white
+        lineChart.xAxis.labelTextColor = UIColor.white
+        
+        //设置Y轴坐标
+        //        lineChart.rightAxis.isEnabled = false
+        //不显示右侧Y轴
+        lineChart.rightAxis.drawAxisLineEnabled = false
+        //不显示右侧Y轴数字
+        lineChart.rightAxis.enabled = false
+        lineChart.leftAxis.axisLineColor = UIColor.white
+        lineChart.leftAxis.gridColor = UIColor.white
+        lineChart.leftAxis.labelTextColor = UIColor.white
+        
+        //设置双击坐标轴是否能缩放
+        lineChart.scaleXEnabled = false
+        lineChart.scaleYEnabled = false
+        
+        //        lineChart.dragEnabled = true
+        //        lineChart.dragDecelerationEnabled = true
+        
+        //设置图表背景色和border
+        //必须设置enable才能有效
+        //        lineChart.drawGridBackgroundEnabled = true
+        //        lineChart.drawBordersEnabled = true
+        //        lineChart.gridBackgroundColor = UIColor.red
+        //        lineChart.borderColor = UIColor.orange
+        //        lineChart.borderLineWidth = 5
+        
+        //设置折线线条
+        //        lineChartDataSet.fillColor = kDefault_0xff6600_clolr
+        //        lineChartDataSet.lineWidth = 4
+        
+        //外圆
+        lineChartDataSet.setCircleColor(UIColor.white)
+        //画外圆
+        //        lineChartDataSet.drawCirclesEnabled = true
+        //内圆
+        lineChartDataSet.circleHoleColor = UIColor.white
+        //画内圆
+        //        lineChartDataSet.drawCircleHoleEnabled = true
+        //线条显示样式
+        //        lineChartDataSet.lineDashLengths = [1,3,4,2]
+        //        lineChartDataSet.lineDashPhase = 0.5
+        lineChartDataSet.colors = [UIColor.white]
+        //线条上的文字
+        lineChartDataSet.valueColors = [UIColor.white]
+        //显示
+        lineChartDataSet.drawValuesEnabled = true
+        //添加显示动画
+        lineChart.animate(xAxisDuration: 1)
+    }
     
     @objc func Handle(_ sender:UIButton){
         print(sender.tag)
@@ -112,4 +221,9 @@ class HomeViewController: TramUIViewController {
         lineView.backgroundColor = color
         return lineView
     }
+}
+
+extension HomeViewController{
+    
+    
 }

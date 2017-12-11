@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98331A6C1FDA96EA00DC3E98 /* Pods_tramcloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B41FDA96A8003709D5 /* Pods_tramcloud.framework */; };
+		980304631FDE14BA0028E766 /* HomeChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304621FDE14BA0028E766 /* HomeChartViewModel.swift */; };
+		980304C31FDE2D790028E766 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304C21FDE2D790028E766 /* HomeViewModel.swift */; };
+		980304C51FDE33940028E766 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304C41FDE33940028E766 /* BaseViewModel.swift */; };
+		980304EB1FDE34AC0028E766 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304EA1FDE34AC0028E766 /* BaseResult.swift */; };
+		980304EE1FDE35D60028E766 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304ED1FDE35D60028E766 /* UserViewModel.swift */; };
+		980304F21FDE52300028E766 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304F11FDE52300028E766 /* UserDefaultUtil.swift */; };
+		980305131FDE63E50028E766 /* ToModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980305121FDE63E40028E766 /* ToModelExtension.swift */; };
+		980305331FDE64F20028E766 /* Pods_tramcloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B41FDA96A8003709D5 /* Pods_tramcloud.framework */; };
+		980305351FDE6BA60028E766 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980305341FDE6BA60028E766 /* AccountViewModel.swift */; };
+		980305371FDE7D290028E766 /* LToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980305361FDE7D290028E766 /* LToast.swift */; };
 		98331A6D1FDA96F200DC3E98 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B01FDA96A8003709D5 /* Moya.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		98331A6F1FDA972500DC3E98 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 98331A6E1FDA971700DC3E98 /* libstdc++.6.0.9.tbd */; };
 		98331A741FDA974700DC3E98 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98331A701FDA974700DC3E98 /* MAMapKit.framework */; };
@@ -31,6 +40,7 @@
 		98331B131FDA9F7C00DC3E98 /* TramTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B0F1FDA9F7C00DC3E98 /* TramTabBarItem.swift */; };
 		98331B141FDA9F7C00DC3E98 /* UIColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */; };
 		98331B151FDA9F7C00DC3E98 /* UIKitUitl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */; };
+		98AC047A1FDE846D00B588A0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AC04791FDE846D00B588A0 /* Network.swift */; };
 		98C1B6321FD141D5009150CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1B6311FD141D5009150CB /* AppDelegate.swift */; };
 		98C1B6371FD141D5009150CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98C1B6351FD141D5009150CB /* Main.storyboard */; };
 		98C1B6391FD141D5009150CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98C1B6381FD141D5009150CB /* Assets.xcassets */; };
@@ -45,6 +55,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		980304E31FDE345C0028E766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C78550D8C13F0C11F702AE9CBF1B9F65;
+			remoteInfo = Differentiator;
+		};
+		980304E51FDE345C0028E766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A111F0E399A93F7762A8B59C2A75CAEE;
+			remoteInfo = RxDataSources;
+		};
+		980305311FDE64ED0028E766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7518AFC3C9A19421036A70E5B319A5F;
+			remoteInfo = HandyJSON;
+		};
 		988DB79D1FDA96A8003709D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
@@ -185,13 +216,6 @@
 			remoteGlobalIDString = 26DB3EA717C1D53519A5C55682A2A1F7;
 			remoteInfo = SwiftyBeaver;
 		};
-		988DB7C51FDA96A8003709D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1E6EE85C2D897BEB421DE35D4C7327A;
-			remoteInfo = SwiftyJSON;
-		};
 		988DB7C71FDA96A8003709D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
@@ -220,11 +244,27 @@
 			remoteGlobalIDString = C9FE558EB4816756AAA256D31B042417;
 			remoteInfo = YYWebImage;
 		};
+		98A6F91E1FDAAE58001E30A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C162F6106190A6E1420269E985797319;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		904C0F8D1D4D5EF1B816AE9B /* Pods-tramcloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tramcloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-tramcloud/Pods-tramcloud.release.xcconfig"; sourceTree = "<group>"; };
 		937903F955117FF764612420 /* Pods_tramcloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tramcloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		980304621FDE14BA0028E766 /* HomeChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartViewModel.swift; sourceTree = "<group>"; };
+		980304C21FDE2D790028E766 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		980304C41FDE33940028E766 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		980304EA1FDE34AC0028E766 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
+		980304ED1FDE35D60028E766 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		980304F11FDE52300028E766 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
+		980305121FDE63E40028E766 /* ToModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToModelExtension.swift; sourceTree = "<group>"; };
+		980305341FDE6BA60028E766 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		980305361FDE7D290028E766 /* LToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LToast.swift; sourceTree = "<group>"; };
 		98331A6E1FDA971700DC3E98 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		98331A701FDA974700DC3E98 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		98331A711FDA974700DC3E98 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
@@ -249,6 +289,7 @@
 		98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtil.swift; sourceTree = "<group>"; };
 		98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitUitl.swift; sourceTree = "<group>"; };
 		988DB7811FDA96A7003709D5 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		98AC04791FDE846D00B588A0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		98C1B62E1FD141D5009150CB /* tramcloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tramcloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C1B6311FD141D5009150CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98C1B6361FD141D5009150CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -270,6 +311,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980305331FDE64F20028E766 /* Pods_tramcloud.framework in Frameworks */,
 				98331AC71FDA9B0500DC3E98 /* Security.framework in Frameworks */,
 				98331AC51FDA9AF600DC3E98 /* SystemConfiguration.framework in Frameworks */,
 				98331AC31FDA9AE200DC3E98 /* Foundation.framework in Frameworks */,
@@ -282,7 +324,6 @@
 				98331A7D1FDA97AF00DC3E98 /* libc++.tbd in Frameworks */,
 				98331A6D1FDA96F200DC3E98 /* Moya.framework in Frameworks */,
 				98331A7B1FDA97A800DC3E98 /* libz.tbd in Frameworks */,
-				98331A6C1FDA96EA00DC3E98 /* Pods_tramcloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +356,34 @@
 				937903F955117FF764612420 /* Pods_tramcloud.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		980304611FDE14A20028E766 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				980304E91FDE34950028E766 /* Response */,
+				980304621FDE14BA0028E766 /* HomeChartViewModel.swift */,
+				980304ED1FDE35D60028E766 /* UserViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		980304C11FDE2D610028E766 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				980304C21FDE2D790028E766 /* HomeViewModel.swift */,
+				980304C41FDE33940028E766 /* BaseViewModel.swift */,
+				980305341FDE6BA60028E766 /* AccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		980304E91FDE34950028E766 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				980304EA1FDE34AC0028E766 /* BaseResult.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		98331AF01FDA9EA600DC3E98 /* View */ = {
@@ -360,6 +429,8 @@
 				98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */,
 				98331B0E1FDA9F7C00DC3E98 /* UIImageUtil.swift */,
 				98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */,
+				980304F11FDE52300028E766 /* UserDefaultUtil.swift */,
+				980305361FDE7D290028E766 /* LToast.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -371,9 +442,12 @@
 				988DB7A01FDA96A8003709D5 /* AttributedLib.framework */,
 				988DB7A21FDA96A8003709D5 /* CFNotify.framework */,
 				988DB7A41FDA96A8003709D5 /* CFResources.bundle */,
+				98A6F91F1FDAAE58001E30A5 /* Charts.framework */,
 				988DB7A61FDA96A8003709D5 /* Closures.framework */,
+				980304E41FDE345C0028E766 /* Differentiator.framework */,
 				988DB7A81FDA96A8003709D5 /* ESPullToRefresh.framework */,
 				988DB7AA1FDA96A8003709D5 /* ESPullToRefresh.bundle */,
+				980305321FDE64ED0028E766 /* HandyJSON.framework */,
 				988DB7AC1FDA96A8003709D5 /* Kingfisher.framework */,
 				988DB7AE1FDA96A8003709D5 /* KSPhotoBrowser.framework */,
 				988DB7B01FDA96A8003709D5 /* Moya.framework */,
@@ -382,12 +456,12 @@
 				988DB7B61FDA96A8003709D5 /* Rswift.framework */,
 				988DB7B81FDA96A8003709D5 /* Result.framework */,
 				988DB7BA1FDA96A8003709D5 /* RxCocoa.framework */,
+				980304E61FDE345C0028E766 /* RxDataSources.framework */,
 				988DB7BC1FDA96A8003709D5 /* RxSwift.framework */,
 				988DB7BE1FDA96A8003709D5 /* SlideMenuControllerSwift.framework */,
 				988DB7C01FDA96A8003709D5 /* SnapKit.framework */,
 				988DB7C21FDA96A8003709D5 /* SwifterSwift.framework */,
 				988DB7C41FDA96A8003709D5 /* SwiftyBeaver.framework */,
-				988DB7C61FDA96A8003709D5 /* SwiftyJSON.framework */,
 				988DB7C81FDA96A8003709D5 /* Then.framework */,
 				988DB7CA1FDA96A8003709D5 /* YYCache.framework */,
 				988DB7CC1FDA96A8003709D5 /* YYImage.framework */,
@@ -419,6 +493,8 @@
 		98C1B6301FD141D5009150CB /* tramcloud */ = {
 			isa = PBXGroup;
 			children = (
+				980304C11FDE2D610028E766 /* ViewModel */,
+				980304611FDE14A20028E766 /* Model */,
 				98C8E6811FDA9FE500F869B3 /* RxSwift */,
 				98331B0D1FDA9F5500DC3E98 /* Util */,
 				98331AF01FDA9EA600DC3E98 /* View */,
@@ -434,7 +510,9 @@
 		98C8E6811FDA9FE500F869B3 /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				980305121FDE63E40028E766 /* ToModelExtension.swift */,
 				98C8E6841FDAA02400F869B3 /* ApiManager.swift */,
+				98AC04791FDE846D00B588A0 /* Network.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -503,6 +581,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		980304E41FDE345C0028E766 /* Differentiator.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Differentiator.framework;
+			remoteRef = 980304E31FDE345C0028E766 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		980304E61FDE345C0028E766 /* RxDataSources.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxDataSources.framework;
+			remoteRef = 980304E51FDE345C0028E766 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		980305321FDE64ED0028E766 /* HandyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HandyJSON.framework;
+			remoteRef = 980305311FDE64ED0028E766 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		988DB79E1FDA96A8003709D5 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -643,13 +742,6 @@
 			remoteRef = 988DB7C31FDA96A8003709D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		988DB7C61FDA96A8003709D5 /* SwiftyJSON.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyJSON.framework;
-			remoteRef = 988DB7C51FDA96A8003709D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		988DB7C81FDA96A8003709D5 /* Then.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -676,6 +768,13 @@
 			fileType = wrapper.framework;
 			path = YYWebImage.framework;
 			remoteRef = 988DB7CD1FDA96A8003709D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98A6F91F1FDAAE58001E30A5 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 98A6F91E1FDAAE58001E30A5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -737,8 +836,11 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AttributedLib/AttributedLib.framework",
 				"${BUILT_PRODUCTS_DIR}/CFNotify/CFNotify.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/KSPhotoBrowser/KSPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -746,12 +848,12 @@
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
@@ -762,8 +864,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AttributedLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CFNotify.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -771,12 +876,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
@@ -795,10 +900,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				98331B0C1FDA9F5000DC3E98 /* BaseUIViewController.swift in Sources */,
+				980304C31FDE2D790028E766 /* HomeViewModel.swift in Sources */,
+				980305131FDE63E50028E766 /* ToModelExtension.swift in Sources */,
+				98AC047A1FDE846D00B588A0 /* Network.swift in Sources */,
 				98331B151FDA9F7C00DC3E98 /* UIKitUitl.swift in Sources */,
 				98331B091FDA9F5000DC3E98 /* LoginController.swift in Sources */,
 				98331B061FDA9F5000DC3E98 /* CanHistoryViewController.swift in Sources */,
+				980304EB1FDE34AC0028E766 /* BaseResult.swift in Sources */,
 				98331B081FDA9F5000DC3E98 /* TramUIViewController.swift in Sources */,
+				980304F21FDE52300028E766 /* UserDefaultUtil.swift in Sources */,
 				98331B071FDA9F5000DC3E98 /* DeviceViewController.swift in Sources */,
 				98C8E6AA1FDAA09B00F869B3 /* HomeViewController.swift in Sources */,
 				98C8E6A91FDAA09B00F869B3 /* VideoViewController.swift in Sources */,
@@ -806,12 +916,17 @@
 				98C8E6AB1FDAA09B00F869B3 /* SystemViewController.swift in Sources */,
 				98331B0B1FDA9F5000DC3E98 /* DeviceListViewController.swift in Sources */,
 				98331B141FDA9F7C00DC3E98 /* UIColorUtil.swift in Sources */,
+				980304C51FDE33940028E766 /* BaseViewModel.swift in Sources */,
 				98331B121FDA9F7C00DC3E98 /* UIImageUtil.swift in Sources */,
+				980305371FDE7D290028E766 /* LToast.swift in Sources */,
 				98C8E6A81FDAA09B00F869B3 /* MapViewController.swift in Sources */,
+				980305351FDE6BA60028E766 /* AccountViewModel.swift in Sources */,
+				980304631FDE14BA0028E766 /* HomeChartViewModel.swift in Sources */,
 				98331B0A1FDA9F5000DC3E98 /* TramTabBarController.swift in Sources */,
 				98C8E6851FDAA02400F869B3 /* ApiManager.swift in Sources */,
 				98C8E6A11FDAA08400F869B3 /* DeviceListTableViewCell.swift in Sources */,
 				98331B131FDA9F7C00DC3E98 /* TramTabBarItem.swift in Sources */,
+				980304EE1FDE35D60028E766 /* UserViewModel.swift in Sources */,
 				98C8E6A71FDAA09B00F869B3 /* CanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,8 +20,10 @@ class TramTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.CreatTabBar()
     }
+    
     //创建tabBar
     func CreatTabBar()  {
         _backView = UIView(frame:CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:49))

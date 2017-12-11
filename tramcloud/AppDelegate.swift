@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let sb=UIStoryboard(name: "Main", bundle: nil)
         //let vc=sb.instantiateViewController(withIdentifier: "TramUIViewController")
         //let nav = UINavigationController(rootViewController:TramTabBarController())
-        self.window?.rootViewController = TramTabBarController()
+        self.window?.rootViewController = LoginController()
         //self.window!.makeKeyAndVisible()
         return true
     }

@@ -7,40 +7,62 @@
 //
 
 import UIKit
-
-class LoginController: UIViewController {
-
-    @IBOutlet weak var bkView: UIView!
-    @IBOutlet weak var headimage: UIImageView!
-    @IBOutlet weak var txtusername: UITextField!
-    @IBOutlet weak var txtpassword: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+import SnapKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
+import Closures
+import AttributedLib
+class LoginController: UIViewController{
+    let bounds = UIScreen.main.bounds
+    var txtusername:UITextField!
+    var txtpassword:UITextField!
+    var loginButton:UIButton!
+    
+    fileprivate let vm = AccountViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let size=UIScreen.main.bounds.size
         let height=size.width*231/320
-        bkView.backgroundColor=UIColor.hexStringToColor(hexString: "f1f3f2")
-        headimage.frame.size=CGSize(width:size.width,height:height)
+        self.view.backgroundColor=UIColor.hexStringToColor(hexString: "f1f3f2")
+        var headimage = UIKitUtil.CreateUIImageView(self.view, "login_header_logo", x: 0, y: 0, width:bounds.width , height: height)
+        txtusername = UIKitUtil.CreateTextField(self.view, 10, height+30, bounds.width-20, 35, "请输入账号")
+        txtpassword = UIKitUtil.CreateTextField(self.view, 10, height+75, bounds.width-20, 35, "请输入密码")
+        txtusername.borderStyle = .roundedRect
+        txtpassword.borderStyle = .roundedRect
         txtusername.clearButtonMode = .whileEditing
+        txtpassword.clearButtonMode = .whileEditing
+        txtpassword.isSecureTextEntry = true
+        txtusername.font = UIFont.systemFont(ofSize: 14)
+        txtpassword.font = UIFont.systemFont(ofSize: 14)
         let username_ico_image = UIImageView(image:UIImage(named:"login_username"))
-        username_ico_image.frame = CGRect(x:0,y:5,width:30,height:20)
+        username_ico_image.frame = CGRect(x:10,y:5,width:20,height:20)
         txtusername.leftView = username_ico_image
         txtusername.leftViewMode = UITextFieldViewMode.always
         let pasword_ico_image = UIImageView(image:UIImage(named:"login_password"))
-        pasword_ico_image.frame = CGRect(x:0,y:5,width:30,height:20)
+        pasword_ico_image.frame = CGRect(x:10,y:5,width:20,height:20)
         txtpassword.leftView = pasword_ico_image
         txtpassword.leftViewMode = UITextFieldViewMode.always
-        loginButton.addTarget(self, action:#selector(loginClick), for:.touchUpInside)
+        loginButton = UIKitUtil.CreateUiButton(self.view, text: "登 录", x: 10, y: height+120, width: bounds.width-20, height: 40, textColor: "ffffff", textSize: 15, tag: 1)
+        loginButton.addTarget(self, action:#selector(Handle(_:)), for:.touchUpInside)
         loginButton.backgroundColor = UIColor.hexStringToColor(hexString: "0b9bee")
         loginButton.layer.cornerRadius=3
-      
+        step()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @objc func loginClick() {
-        print("click this")
-        let alert=UIAlertController.init(title:"tips",message:"msg",preferredStyle:.alert)
-        alert.addAction(UIAlertAction.init(title:"cancle",style:.cancel,handler:nil))
-        self.present(alert,animated: true)
+    @objc func Handle(_ sender:UIButton) {
+        let username = txtusername.text as! String
+        let password = txtpassword.text as! String
+        if(username == nil || username == ""){
+            Toast.fail(with: "用户名不能为空!")
+            return
+        }
+        if(password == nil || password == ""){
+            Toast.fail(with: "密码不能为空!")
+            return
+        }
+        vm.Login(username, password, "")
         
     }
    
@@ -51,6 +73,25 @@ class LoginController: UIViewController {
     }
 
    
+}
+extension LoginController{
+    func step(){
+        vm
+        .loginResult
+        .asObservable()
+            .observeOn(MainScheduler.asyncInstance)
+            .filter({$0.success != nil})
+            .subscribe(onNext: { [unowned self] (model) in
+                if(model != nil){
+                    if(model.success)!{
+                        Toast.success(with: "登录成功!")
+                    }else{
+                        Toast.fail(with: model.info!)
+                    }
+                }
+            })
+            .disposed(by: rx.disposeBag)
+    }
 }
 
 

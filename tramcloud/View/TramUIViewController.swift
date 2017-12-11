@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import Moya
+import RxSwift
+
 class TramUIViewController: UIViewController {
     
     let bounds=UIScreen.main.bounds
     var statusHeight:CGFloat = 0
+    var provider = MoyaProvider<ApiManager>()
     override func viewDidLoad() {
         super.viewDidLoad()
+        IsLogin()
         statusHeight = UIApplication.shared.statusBarFrame.height+(self.navigationController?.navigationBar.frame.height)!
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 17),NSAttributedStringKey.foregroundColor:UIColor.white]
+    }
+    func IsLogin(){
+        if(UserDefaultUtil.getNormalUserDefault("userinfo") == nil){
+            let loginView = LoginController()
+            self.present(loginView, animated: true, completion: nil)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

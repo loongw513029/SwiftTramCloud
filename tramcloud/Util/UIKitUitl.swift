@@ -63,6 +63,16 @@ public class UIKitUtil {
         }
         return imageview
     }
+    
+    static func CreateTextField(_ view:UIView,_ x:CGFloat,_ y:CGFloat,_ width:CGFloat,_ height:CGFloat,
+                                _ placeholder:String) ->UITextField{
+        let textField = UITextField(frame:CGRect(x:x,y:y,width:width,height:height))
+        if(view != nil){
+            view.addSubview(textField)
+        }
+        textField.placeholder = placeholder
+        return textField
+    }
 }
 extension UIView{
     

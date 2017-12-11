@@ -1,181 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MaV-za-rc3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7zw-li-jWT">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="WeI-z6-S2l">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JL-mt-9oY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="login_header_logo" translatesAutoresizingMaskIntoConstraints="NO" id="8F7-oy-8PL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="271"/>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dh4-UC-1q6">
-                                        <rect key="frame" x="10" y="324" width="300" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-Ru-hce">
-                                        <rect key="frame" x="10" y="374" width="300" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvr-bC-Z8w">
-                                        <rect key="frame" x="10" y="449" width="300" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="登 陆">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dh4-UC-1q6" secondAttribute="trailing" constant="10" id="090-zi-GDR"/>
-                                    <constraint firstItem="8F7-oy-8PL" firstAttribute="leading" secondItem="3JL-mt-9oY" secondAttribute="leading" id="53R-eC-fdr"/>
-                                    <constraint firstItem="dh4-UC-1q6" firstAttribute="top" secondItem="8F7-oy-8PL" secondAttribute="bottom" multiplier="4:3" constant="53" id="Dqd-z3-3nL"/>
-                                    <constraint firstItem="Zvr-bC-Z8w" firstAttribute="top" secondItem="Axb-Ru-hce" secondAttribute="bottom" constant="30" id="Dy2-l6-LqH"/>
-                                    <constraint firstItem="dh4-UC-1q6" firstAttribute="leading" secondItem="3JL-mt-9oY" secondAttribute="leading" constant="10" id="Ez0-gs-pUH"/>
-                                    <constraint firstItem="Axb-Ru-hce" firstAttribute="top" secondItem="dh4-UC-1q6" secondAttribute="bottom" constant="20" id="QQA-Q2-V06"/>
-                                    <constraint firstItem="Axb-Ru-hce" firstAttribute="leading" secondItem="3JL-mt-9oY" secondAttribute="leading" constant="10" id="SXx-Dm-5hc"/>
-                                    <constraint firstAttribute="trailing" secondItem="Axb-Ru-hce" secondAttribute="trailing" constant="10" id="bVy-ca-Qfn"/>
-                                    <constraint firstItem="Zvr-bC-Z8w" firstAttribute="leading" secondItem="3JL-mt-9oY" secondAttribute="leading" constant="10" id="jvY-RK-Do5"/>
-                                    <constraint firstAttribute="trailing" secondItem="8F7-oy-8PL" secondAttribute="trailing" id="p2C-WJ-9KJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zvr-bC-Z8w" secondAttribute="trailing" constant="10" id="voW-jw-fP7"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="3JL-mt-9oY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AVP-g3-eyf"/>
-                            <constraint firstItem="3JL-mt-9oY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="URF-0e-PLO"/>
-                            <constraint firstItem="3JL-mt-9oY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dGJ-rg-7E0"/>
-                            <constraint firstItem="3JL-mt-9oY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oaF-JU-a0D"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="bkView" destination="3JL-mt-9oY" id="Sty-Nc-EhT"/>
-                        <outlet property="headimage" destination="8F7-oy-8PL" id="GtM-iE-cg0"/>
-                        <outlet property="loginButton" destination="Zvr-bC-Z8w" id="SzE-Zj-IIx"/>
-                        <outlet property="txtpassword" destination="Axb-Ru-hce" id="znb-fE-fFA"/>
-                        <outlet property="txtusername" destination="dh4-UC-1q6" id="rqe-ag-6Ty"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="116.25" y="117.25352112676056"/>
-        </scene>
-        <!--Tram Tab Bar Controller-->
-        <scene sceneID="pIT-cr-O3O">
-            <objects>
-                <viewController storyboardIdentifier="Main" id="MaV-za-rc3" customClass="TramTabBarController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K83-9T-mA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="917" y="117"/>
-        </scene>
-        <!--Video View Controller-->
-        <scene sceneID="I9A-Yt-H1z">
-            <objects>
-                <viewController id="1CS-lS-Q1s" customClass="VideoViewController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ktI-og-8HB">
+                <viewController id="7zw-li-jWT" customClass="LoginController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MVM-aq-Gsw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="mf6-Uh-ZJ0"/>
+                        <viewLayoutGuide key="safeArea" id="Ayd-mM-UKE"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qeT-0X-A6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNT-Nk-03h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="407"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="Pa4-qf-0S1">
-            <objects>
-                <viewController id="dv3-Pe-aL4" customClass="MapViewController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CKT-UU-i5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="SVW-sM-AHT"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-zD-r09" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2381" y="407"/>
-        </scene>
-        <!--Can View Controller-->
-        <scene sceneID="iEO-im-ZQO">
-            <objects>
-                <viewController id="wZf-3k-as8" customClass="CanViewController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qgY-WY-7mV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CAN界面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itu-S3-JGM">
-                                <rect key="frame" x="153" y="176" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="yJp-Ir-YnC"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hki-n7-hC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1730.625" y="-271.47887323943661"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="GY0-gb-Biy">
-            <objects>
-                <viewController id="5nH-e1-fEC" customClass="HomeViewController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gP8-gI-XrN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="HpJ-GQ-GVQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Opj-Pf-iv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2383" y="-271"/>
-        </scene>
-        <!--System View Controller-->
-        <scene sceneID="tqp-Mq-foZ">
-            <objects>
-                <viewController id="LkD-aW-QLB" customClass="SystemViewController" customModule="tramcloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iXr-Y6-Xee">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="chi-Ql-3xH"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sFh-mq-lEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3045" y="-271"/>
+            <point key="canvasLocation" x="5029" y="957"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="login_header_logo" width="180" height="130"/>
-    </resources>
 </document>
