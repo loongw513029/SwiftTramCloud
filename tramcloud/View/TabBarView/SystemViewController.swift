@@ -20,12 +20,12 @@ class SystemViewController: TramUIViewController {
     var loginButton:UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        CustomNavigationBar("个人中心", false, false, true, "", 0, 0)
+        CustomNavigationBar("个人中心", false, false, true, "", 0, 0,1)
         initView()
     }
     
     func initView(){
-        let height = bounds.height - statusHeight-50
+        let height = bounds.height - statusHeight-AppDelegate().TabBarHeight
         let sysHeaderHeight = height * 0.1385
         let baseView = UIKitUtil.CreateUiView(self.view, x: 0, y: 0, width: bounds.width, height: height, backgroundColor: "f1f3f8")
         let headerView = UIKitUtil.CreateUiView(baseView, x: 0, y: 0, width: bounds.width, height: sysHeaderHeight, backgroundColor: "099bee")

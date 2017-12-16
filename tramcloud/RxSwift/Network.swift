@@ -16,6 +16,7 @@ let bag = DisposeBag()
 struct Network {
     static let provider = MoyaProvider<ApiManager>(plugins:[
         AuthPlugin(AccessToken: UserDefaultUtil.getNormalUserDefault("access_token") as! String, username: UserDefaultUtil.getNormalUserDefault("username") as! String, refreshToken: UserDefaultUtil.getNormalUserDefault("refresh_token") as! String)])
+    
     ///登录方法
     static func Login(_ username:String,_ password:String,_ clientid:String) ->Observable<BaseResult<UserInfo>>{
         return Observable.create({ (observer) -> Disposable in

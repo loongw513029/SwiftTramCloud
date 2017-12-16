@@ -28,7 +28,7 @@ struct UserInfo : HandyJSON{
     var AppConf:AppRoleModel?
 }
 struct AppRoleModel : HandyJSON{
-    var AppName:String?
+    var AppName:String? = ""
     var OrgType:Int?
     var IsHaveCan:Bool?
     var IsHaveVedio:Bool?

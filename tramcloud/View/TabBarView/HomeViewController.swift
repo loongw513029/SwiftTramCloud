@@ -10,22 +10,47 @@ import Foundation
 import UIKit
 import Charts
 import SnapKit
-class HomeViewController: TramUIViewController,ChartViewDelegate {
+import RxCocoa
+import RxSwift
+
+class HomeViewController: TramUIViewController,ChartViewDelegate,HomeView {
+    
+    var carnotext:UIButton!
+    var onlinetext:UIButton!
+    var linetext:UIButton!
+    var yctext:UIButton!
+    var xAlias = [[String]]()
+    var yAlias = [[UInt]]()
+    var titles = [String]()
+    var scrollView:UIScrollView!
+    var chartView:UIView!
+    var homePresenter:HomePresenter!
+    var AppTitle = "车辆云管理"
+    var lineId:Int? = 0
+    var userId:Int?
+    var defaultDeviceCode:String = ""
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "车辆云管理"
+        super.viewDidLoad()       
+        self.navigationItem.title = AppTitle
         self.view.backgroundColor=UIColor.hexStringToColor(hexString: "f2f2f2")
         self.InitView()
-        let rightButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        let rightButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(showMorePage))
         rightButton.image = UIImage(named:"ic_more")
         rightButton.tintColor = UIColor.white
+        rightButton.tag = 1
+        rightButton.width = -20
         // 添加左侧、右侧按钮
-        self.navigationItem.setRightBarButton(rightButton, animated: false)
-        showBackButton()
+        self.navigationItem.setRightBarButton(rightButton, animated: true)
+        if(homePresenter == nil){
+            homePresenter = HomePresenter(self.view,self)
+        }
+        userId = userInfo.Id!
+        self.reloadData()
+        homePresenter.GetDefaultDeviceCodesAndOnlySelectOnlineDevice()
     }
+   
     func InitView(){
-        print(bounds.height)
-        let chartView = UIKitUtil.CreateUiView(self.view,x: 0, y: 0, width: bounds.width, height: bounds.height*0.32, backgroundColor: "0b9bee")
+        chartView = UIKitUtil.CreateUiView(self.view,x: 0, y: 0, width: bounds.width, height: bounds.height*0.32, backgroundColor: "0b9bee")
         self.view.addSubview(chartView)
         initScrollView(chartView)
         //中间车辆总数，在线数量，线路条数，异常行为
@@ -34,25 +59,25 @@ class HomeViewController: TramUIViewController,ChartViewDelegate {
         let labelHeight = bounds.height*0.13
         let carnoView=UIKitUtil.CreateUiView(navNumberView, x:0,y:0,width:labelWidth,height:labelHeight, backgroundColor: "ffffff")
         let carnoLabel=UIKitUtil.CreateUILable(carnoView, text: "车辆台数", x:0,y:15,width:labelWidth,height:20, textColor: "00000", textSize: 13, textAlign: .center)
-        let carnotext=UIKitUtil.CreateUiButton(carnoView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 1)
+        carnotext=UIKitUtil.CreateUiButton(carnoView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 1)
         UIKitUtil.CreateUiView(navNumberView, x: labelWidth, y: 10, width: 1, height: labelHeight-20, backgroundColor: "dedede")
    
         carnotext.addTarget(self, action: #selector(Handle(_:)), for: .touchUpInside)
         let onlineView=UIKitUtil.CreateUiView(navNumberView, x:labelWidth+1,y:0,width:labelWidth,height:labelHeight, backgroundColor: "ffffff")
         let onlineLabel=UIKitUtil.CreateUILable(onlineView, text: "在线台数", x:0,y:15,width:labelWidth,height:20, textColor: "00000", textSize:13,textAlign: .center)
-        let onlinetext=UIKitUtil.CreateUiButton(onlineView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 2)
+        onlinetext=UIKitUtil.CreateUiButton(onlineView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 2)
         onlinetext.addTarget(self, action: #selector(Handle(_:)), for: .touchUpInside)
         UIKitUtil.CreateUiView(navNumberView, x: labelWidth*2, y: 10, width: 1, height: labelHeight-20, backgroundColor: "dedede")
         
         let lineView=UIKitUtil.CreateUiView(navNumberView, x:labelWidth*2+2,y:0,width:labelWidth,height:labelHeight, backgroundColor: "ffffff")
         let lineLabel=UIKitUtil.CreateUILable(lineView, text: "线路条数", x:0,y:15,width:labelWidth,height:20, textColor: "00000", textSize: 13, textAlign: .center)
-        let linetext=UIKitUtil.CreateUiButton(lineView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 3)
+        linetext=UIKitUtil.CreateUiButton(lineView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 3)
         UIKitUtil.CreateUiView(navNumberView, x: labelWidth*3, y: 10, width: 1, height: labelHeight-20, backgroundColor: "dedede")
         linetext.addTarget(self, action: #selector(Handle(_:)), for: .touchUpInside)
         
         let ycView=UIKitUtil.CreateUiView(navNumberView, x:labelWidth*3+3,y:0,width:labelWidth,height:labelHeight, backgroundColor: "ffffff")
         let ycLabel=UIKitUtil.CreateUILable(ycView, text: "异常行为", x:0,y:15,width:labelWidth,height:20, textColor: "00000", textSize: 13, textAlign: .center)
-        let yctext=UIKitUtil.CreateUiButton(ycView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 4)
+        yctext=UIKitUtil.CreateUiButton(ycView, text: "0", x:0,y:35,width:labelWidth,height:labelHeight-35, textColor: "0b9bee", textSize: 14, tag: 4)
         yctext.addTarget(self, action: #selector(Handle(_:)), for: .touchUpInside)
         self.view.addSubview(navNumberView)
         //统计分析，设备巡检，设备维修，车辆报警
@@ -91,21 +116,61 @@ class HomeViewController: TramUIViewController,ChartViewDelegate {
         alarmtxtButton.addTarget(self, action: #selector(Handle(_:)), for: .touchUpInside)
     }
     func initScrollView(_ view:UIView){
-        let scrollView = UIScrollView()
+        scrollView = UIScrollView()
         scrollView.frame = view.bounds
         scrollView.contentSize = CGSize(width: view.bounds.width * 2,height: view.bounds.height)
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.scrollsToTop = false
-        for i in 0..<2{
-           createChartView(scrollView,i)
-        //scrollView.addSubview(myViewController.view)
-        }
         view.addSubview(scrollView)
     }
     
-    func createChartView(_ scrollView:UIScrollView,_ index:Int){
+    
+    
+    @objc func Handle(_ sender:UIButton){
+       
+        switch sender.tag {
+        case 1:
+            let deviceListView = DeviceListViewController()
+            deviceListView.tag = 1
+            deviceListView.title = "设备列表"
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController!.pushViewController(deviceListView, animated: true)
+            break
+        case 2:
+            let deviceListView = DeviceListViewController()
+            deviceListView.tag = 2
+            deviceListView.title = "在线列表"
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController!.pushViewController(deviceListView, animated: true)
+            break
+        case 5:
+            let canhistoryView = CanHistoryViewController()
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController!.pushViewController(canhistoryView, animated: true)
+        case 8:
+            let canAlarmView = CarAlarmChartController()
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController!.pushViewController(canAlarmView,animated:true)
+            break
+        default:
+            break
+        }
+        self.hidesBottomBarWhenPushed = false
+    }
+    func LineView(x:CGFloat,y:CGFloat,w:CGFloat,h:CGFloat,color:UIColor) -> UIView{
+        let lineView = UIView(frame:CGRect(x:x,y:y,width:2,height:h))
+        lineView.backgroundColor = color
+        return lineView
+    }
+}
+
+extension HomeViewController{
+    func reloadData(){
+        homePresenter.GetHomeChartData(self.userId!, self.lineId!)
+    }
+    func createChartView(_ scrollView:UIScrollView,_ index:Int,xAlis:[String],yAlis:[UInt],title:String){
         var x:CGFloat = 0;
         if(index>0){
             x = bounds.width * CGFloat(index)
@@ -114,31 +179,30 @@ class HomeViewController: TramUIViewController,ChartViewDelegate {
         lineChart.delegate = self
         lineChart.backgroundColor = UIColor.hexStringToColor(hexString: "0b9bee")
         scrollView.addSubview(lineChart)
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
-    
-        setChart(lineChart,months, values: unitsSold)
+        setChart(lineChart,xAlis, values: yAlis,thema: title)
     }
     
-    func setChart(_ lineChart:LineChartView,_ dataPoints: [String], values: [Double]) {
+    func setChart(_ lineChart:LineChartView,_ dataPoints: [String], values: [UInt],thema:String) {
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-        let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[i]))
             dataEntries.append(dataEntry)
         }
-    
-        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "单位：万元")
+        
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "单位：次")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         
         lineChart.data = lineChartData
         //右下角图标描述
-        lineChart.chartDescription?.text = "ChartView"
+        lineChart.chartDescription?.text = thema
+        lineChart.chartDescription?.textColor = UIColor.white
+        lineChart.chartDescription?.font = UIFont.boldSystemFont(ofSize: 14)
         
         //左下角图例
         //        lineChart.legend.formSize = 30
         //        lineChart.legend.form = .square
-        lineChart.legend.textColor = UIColor.black
+        lineChart.legend.textColor = UIColor.white
         
         //设置X轴坐标
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
@@ -151,7 +215,7 @@ class HomeViewController: TramUIViewController,ChartViewDelegate {
         //设置Y轴坐标
         //        lineChart.rightAxis.isEnabled = false
         //不显示右侧Y轴
-        lineChart.rightAxis.drawAxisLineEnabled = false
+        lineChart.rightAxis.drawAxisLineEnabled = true
         //不显示右侧Y轴数字
         lineChart.rightAxis.enabled = false
         lineChart.leftAxis.axisLineColor = UIColor.white
@@ -196,34 +260,57 @@ class HomeViewController: TramUIViewController,ChartViewDelegate {
         //添加显示动画
         lineChart.animate(xAxisDuration: 1)
     }
-    
-    @objc func Handle(_ sender:UIButton){
-        print(sender.tag)
-        switch sender.tag {
-        case 1:
-            let deviceListView = DeviceListViewController()
-            deviceListView.title = "设备列表"
-            self.hidesBottomBarWhenPushed = true
-            self.navigationController!.pushViewController(deviceListView, animated: true)
-            break
-        case 5:
-            let canhistoryView = CanHistoryViewController()
-            self.hidesBottomBarWhenPushed = true
-            self.navigationController!.pushViewController(canhistoryView, animated: true)
-            
-        default:
-            break
+    func GetHomeData(_ data: HomeChartViewModel) {
+        titles = [String]()
+        xAlias = [[String]]()
+        yAlias = [[UInt]]()
+        carnotext.setTitle(String(data.TotalDeviceCount!), for: .normal)
+        onlinetext.setTitle(String(data.OnLineDeviceCount!), for: .normal)
+        linetext.setTitle(String(data.TotalLineCount!), for: .normal)
+        yctext.setTitle(String(data.TotalUnsafeCount!), for: .normal)
+        for i in 0..<data.ChartList!.count{
+            let Chart = data.ChartList![i]
+            titles.append(Chart.ChartName!)
+            var xAliaItem = [String]()
+            var yAliaItem = [UInt]()
+            for j in 0..<Chart.Data!.count{
+                let item  = Chart.Data![j]
+                xAliaItem.append(item.AxisName!)
+                yAliaItem.append(item.AxisValue!)
+            }
+            xAlias.append(xAliaItem)
+            yAlias.append(yAliaItem)
         }
-        self.hidesBottomBarWhenPushed = false
+        for i in 0..<2{
+            createChartView(scrollView, i, xAlis: xAlias[i], yAlis: yAlias[i], title: titles[i])
+        }
     }
-    func LineView(x:CGFloat,y:CGFloat,w:CGFloat,h:CGFloat,color:UIColor) -> UIView{
-        let lineView = UIView(frame:CGRect(x:x,y:y,width:2,height:h))
-        lineView.backgroundColor = color
-        return lineView
-    }
-}
-
-extension HomeViewController{
     
+    func GetAppHomeModel(_ data: [AppDropDownModel]) {
+        var deviceInfo:AppDropDownModel!
+        for i in 0..<data.count{
+            let device = data[i]
+            if(device.IsOnline)!{
+                deviceInfo = device
+                break
+            }
+        }
+        if(deviceInfo != nil){
+            UserDefaultUtil.setNormalDefault("DefaultDevice", deviceInfo.toJSONString(prettyPrint: true))
+        }else{
+            UserDefaultUtil.setNormalDefault("DefaultDevice", "")
+        }
+    }
+    
+}
+extension HomeViewController : ValueBackDelegate{
+    
+    func ValueBack(type: Int, value: AnyObject) {
+        let model = value as? DeviceFilterResult
+        updateTabbarItem(title:self.AppTitle,linename: (model?.lineName)!)
+        self.lineId = model?.lineId
+        self.reloadData()
+        
+    }
     
 }

@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		980304631FDE14BA0028E766 /* HomeChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304621FDE14BA0028E766 /* HomeChartViewModel.swift */; };
-		980304C31FDE2D790028E766 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304C21FDE2D790028E766 /* HomeViewModel.swift */; };
-		980304C51FDE33940028E766 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304C41FDE33940028E766 /* BaseViewModel.swift */; };
 		980304EB1FDE34AC0028E766 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304EA1FDE34AC0028E766 /* BaseResult.swift */; };
 		980304EE1FDE35D60028E766 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304ED1FDE35D60028E766 /* UserViewModel.swift */; };
 		980304F21FDE52300028E766 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980304F11FDE52300028E766 /* UserDefaultUtil.swift */; };
 		980305131FDE63E50028E766 /* ToModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980305121FDE63E40028E766 /* ToModelExtension.swift */; };
-		980305331FDE64F20028E766 /* Pods_tramcloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B41FDA96A8003709D5 /* Pods_tramcloud.framework */; };
-		980305351FDE6BA60028E766 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980305341FDE6BA60028E766 /* AccountViewModel.swift */; };
 		980305371FDE7D290028E766 /* LToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980305361FDE7D290028E766 /* LToast.swift */; };
+		981A03371FE139E000BD5121 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A03361FE139E000BD5121 /* DeviceView.swift */; };
+		981A03391FE13A1800BD5121 /* DeviceListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A03381FE13A1800BD5121 /* DeviceListModel.swift */; };
+		981A033B1FE13A9000BD5121 /* DevicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A033A1FE13A9000BD5121 /* DevicePresenter.swift */; };
+		981A033D1FE158F600BD5121 /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A033C1FE158F600BD5121 /* BusModel.swift */; };
+		981A033F1FE15A1A00BD5121 /* BusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A033E1FE15A1A00BD5121 /* BusDetailView.swift */; };
+		981A03411FE1687B00BD5121 /* DevicerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A03401FE1687B00BD5121 /* DevicerViewCell.swift */; };
 		98331A6D1FDA96F200DC3E98 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B01FDA96A8003709D5 /* Moya.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		98331A6F1FDA972500DC3E98 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 98331A6E1FDA971700DC3E98 /* libstdc++.6.0.9.tbd */; };
 		98331A741FDA974700DC3E98 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98331A701FDA974700DC3E98 /* MAMapKit.framework */; };
@@ -40,7 +42,28 @@
 		98331B131FDA9F7C00DC3E98 /* TramTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B0F1FDA9F7C00DC3E98 /* TramTabBarItem.swift */; };
 		98331B141FDA9F7C00DC3E98 /* UIColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */; };
 		98331B151FDA9F7C00DC3E98 /* UIKitUitl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */; };
+		986768C21FE24A3B00866969 /* ValueBackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768C11FE24A3B00866969 /* ValueBackDelegate.swift */; };
+		986768E11FE270BE00866969 /* CanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768E01FE270BE00866969 /* CanView.swift */; };
+		986768E31FE270E200866969 /* CanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768E21FE270E200866969 /* CanModel.swift */; };
+		986768E51FE2763A00866969 /* DataStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768E41FE2763A00866969 /* DataStateModel.swift */; };
+		986768E71FE276F000866969 /* CanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768E61FE276F000866969 /* CanPresenter.swift */; };
+		986BD8001FDF7A6A009380FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD7FF1FDF7A6A009380FA /* HomeView.swift */; };
+		986BD81F1FDF7C1B009380FA /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD81E1FDF7C1B009380FA /* HomePresenter.swift */; };
+		986BD8211FDFAB6E009380FA /* DeviceFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD8201FDFAB6E009380FA /* DeviceFilterController.swift */; };
+		986BD8231FDFCD94009380FA /* DeviceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD8221FDFCD94009380FA /* DeviceFilterView.swift */; };
+		986BD8251FDFCE08009380FA /* DeviceFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD8241FDFCE08009380FA /* DeviceFilterPresenter.swift */; };
+		986BD8271FDFD69C009380FA /* DeviceFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD8261FDFD69C009380FA /* DeviceFilterViewCell.swift */; };
+		98A463BA1FDF6A6000DDD545 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A463B91FDF6A6000DDD545 /* BasePresenter.swift */; };
 		98AC047A1FDE846D00B588A0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AC04791FDE846D00B588A0 /* Network.swift */; };
+		98AC047D1FDEC3C300B588A0 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AC047C1FDEC3C300B588A0 /* NetworkExtension.framework */; };
+		98B012771FE22A7500CEDE98 /* DeviceFilterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B012761FE22A7500CEDE98 /* DeviceFilterResult.swift */; };
+		98C0E5431FE36A1300CA496E /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0E5421FE36A1300CA496E /* MapModel.swift */; };
+		98C0E5621FE36BEF00CA496E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0E5611FE36BEF00CA496E /* MapView.swift */; };
+		98C0E5641FE3715E00CA496E /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0E5631FE3715E00CA496E /* MapPresenter.swift */; };
+		98C0E5661FE37B3000CA496E /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98C0E5651FE37B3000CA496E /* AMap.bundle */; };
+		98C0E5681FE398EF00CA496E /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0E5671FE398EF00CA496E /* DateUtil.swift */; };
+		98C0E56C1FE3D2AE00CA496E /* PopActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0E56B1FE3D2AE00CA496E /* PopActionSheet.swift */; };
+		98C0E5B11FE3EB4E00CA496E /* CarAlarmChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0E5B01FE3EB4E00CA496E /* CarAlarmChartController.swift */; };
 		98C1B6321FD141D5009150CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1B6311FD141D5009150CB /* AppDelegate.swift */; };
 		98C1B6371FD141D5009150CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98C1B6351FD141D5009150CB /* Main.storyboard */; };
 		98C1B6391FD141D5009150CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98C1B6381FD141D5009150CB /* Assets.xcassets */; };
@@ -52,6 +75,20 @@
 		98C8E6A91FDAA09B00F869B3 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8E6A41FDAA09B00F869B3 /* VideoViewController.swift */; };
 		98C8E6AA1FDAA09B00F869B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8E6A51FDAA09B00F869B3 /* HomeViewController.swift */; };
 		98C8E6AB1FDAA09B00F869B3 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8E6A61FDAA09B00F869B3 /* SystemViewController.swift */; };
+		98D9BC541FE4F99A0080C439 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9BC531FE4F99A0080C439 /* AlarmListViewController.swift */; };
+		98D9BCB51FE502480080C439 /* TramCusHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9BCB41FE502480080C439 /* TramCusHeader.swift */; };
+		98D9BCB71FE506880080C439 /* AlarmListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9BCB61FE506880080C439 /* AlarmListTableViewCell.swift */; };
+		98D9BCB81FE509BC0080C439 /* Pods_tramcloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B41FDA96A8003709D5 /* Pods_tramcloud.framework */; };
+		98D9BCBA1FE51C9B0080C439 /* AlarmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9BCB91FE51C9B0080C439 /* AlarmDetailViewController.swift */; };
+		98E5B0F71FE4A3CE00338E95 /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B0F61FE4A3CE00338E95 /* IntAxisValueFormatter.swift */; };
+		98E5B0F91FE4A49B00338E95 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B0F81FE4A49B00338E95 /* LargeValueFormatter.swift */; };
+		98E5B0FC1FE4B04600338E95 /* AlarmChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B0FB1FE4B04600338E95 /* AlarmChartModel.swift */; };
+		98E5B0FE1FE4B1AC00338E95 /* AlarmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B0FD1FE4B1AC00338E95 /* AlarmPresenter.swift */; };
+		98E5B1001FE4B1FD00338E95 /* AlarmChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B0FF1FE4B1FD00338E95 /* AlarmChartView.swift */; };
+		98E5B1021FE4B22D00338E95 /* AlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B1011FE4B22D00338E95 /* AlarmListView.swift */; };
+		98E5B1041FE4B23C00338E95 /* AlarmDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5B1031FE4B23C00338E95 /* AlarmDetailView.swift */; };
+		98E96DE61FDF63BC000A6B0E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E96DE51FDF63BC000A6B0E /* LoginView.swift */; };
+		98E96DE81FDF6467000A6B0E /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E96DE71FDF6467000A6B0E /* AccountPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,20 +147,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 72591EAB1D0A589F2C13F984DE97B7ED;
 			remoteInfo = Closures;
-		};
-		988DB7A71FDA96A8003709D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6A02E3339CCD3FD30FA8C8A00903060E;
-			remoteInfo = ESPullToRefresh;
-		};
-		988DB7A91FDA96A8003709D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E1005427B02DA49C469188B48B22BCD;
-			remoteInfo = "ESPullToRefresh-ESPullToRefresh";
 		};
 		988DB7AB1FDA96A8003709D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -188,13 +211,6 @@
 			remoteGlobalIDString = A0A32ED72287DCE858DA8B924CFF598C;
 			remoteInfo = RxSwift;
 		};
-		988DB7BD1FDA96A8003709D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 936ECFE118DA3F5D2E707CF535588B0C;
-			remoteInfo = SlideMenuControllerSwift;
-		};
 		988DB7BF1FDA96A8003709D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
@@ -244,6 +260,13 @@
 			remoteGlobalIDString = C9FE558EB4816756AAA256D31B042417;
 			remoteInfo = YYWebImage;
 		};
+		98A463D91FDF6BB600DDD545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F0B5DD136ACB2EAA83D8860F380BEF81;
+			remoteInfo = MBProgressHUD;
+		};
 		98A6F91E1FDAAE58001E30A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
@@ -251,20 +274,37 @@
 			remoteGlobalIDString = C162F6106190A6E1420269E985797319;
 			remoteInfo = Charts;
 		};
+		98C0E58C1FE3D3CA00CA496E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20F8B6E5F8EC6986E18D3EDD6945C984;
+			remoteInfo = Spring;
+		};
+		98D9BCB21FE502250080C439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988DB7811FDA96A7003709D5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14E2A13CC8B4822A915ED479D70A769F;
+			remoteInfo = MJRefresh;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		904C0F8D1D4D5EF1B816AE9B /* Pods-tramcloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tramcloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-tramcloud/Pods-tramcloud.release.xcconfig"; sourceTree = "<group>"; };
 		937903F955117FF764612420 /* Pods_tramcloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tramcloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980304621FDE14BA0028E766 /* HomeChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartViewModel.swift; sourceTree = "<group>"; };
-		980304C21FDE2D790028E766 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		980304C41FDE33940028E766 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		980304EA1FDE34AC0028E766 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
 		980304ED1FDE35D60028E766 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		980304F11FDE52300028E766 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		980305121FDE63E40028E766 /* ToModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToModelExtension.swift; sourceTree = "<group>"; };
-		980305341FDE6BA60028E766 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		980305361FDE7D290028E766 /* LToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LToast.swift; sourceTree = "<group>"; };
+		981A03361FE139E000BD5121 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		981A03381FE13A1800BD5121 /* DeviceListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListModel.swift; sourceTree = "<group>"; };
+		981A033A1FE13A9000BD5121 /* DevicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePresenter.swift; sourceTree = "<group>"; };
+		981A033C1FE158F600BD5121 /* BusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
+		981A033E1FE15A1A00BD5121 /* BusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDetailView.swift; sourceTree = "<group>"; };
+		981A03401FE1687B00BD5121 /* DevicerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicerViewCell.swift; sourceTree = "<group>"; };
 		98331A6E1FDA971700DC3E98 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		98331A701FDA974700DC3E98 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		98331A711FDA974700DC3E98 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
@@ -288,8 +328,29 @@
 		98331B0F1FDA9F7C00DC3E98 /* TramTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TramTabBarItem.swift; sourceTree = "<group>"; };
 		98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtil.swift; sourceTree = "<group>"; };
 		98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitUitl.swift; sourceTree = "<group>"; };
+		986768C11FE24A3B00866969 /* ValueBackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBackDelegate.swift; sourceTree = "<group>"; };
+		986768E01FE270BE00866969 /* CanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanView.swift; sourceTree = "<group>"; };
+		986768E21FE270E200866969 /* CanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanModel.swift; sourceTree = "<group>"; };
+		986768E41FE2763A00866969 /* DataStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStateModel.swift; sourceTree = "<group>"; };
+		986768E61FE276F000866969 /* CanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanPresenter.swift; sourceTree = "<group>"; };
+		986BD7FF1FDF7A6A009380FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		986BD81E1FDF7C1B009380FA /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		986BD8201FDFAB6E009380FA /* DeviceFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFilterController.swift; sourceTree = "<group>"; };
+		986BD8221FDFCD94009380FA /* DeviceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFilterView.swift; sourceTree = "<group>"; };
+		986BD8241FDFCE08009380FA /* DeviceFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFilterPresenter.swift; sourceTree = "<group>"; };
+		986BD8261FDFD69C009380FA /* DeviceFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFilterViewCell.swift; sourceTree = "<group>"; };
 		988DB7811FDA96A7003709D5 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		98A463B91FDF6A6000DDD545 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		98AC04791FDE846D00B588A0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		98AC047C1FDEC3C300B588A0 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		98B012761FE22A7500CEDE98 /* DeviceFilterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFilterResult.swift; sourceTree = "<group>"; };
+		98C0E5421FE36A1300CA496E /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		98C0E5611FE36BEF00CA496E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		98C0E5631FE3715E00CA496E /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		98C0E5651FE37B3000CA496E /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
+		98C0E5671FE398EF00CA496E /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		98C0E56B1FE3D2AE00CA496E /* PopActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopActionSheet.swift; sourceTree = "<group>"; };
+		98C0E5B01FE3EB4E00CA496E /* CarAlarmChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAlarmChartController.swift; sourceTree = "<group>"; };
 		98C1B62E1FD141D5009150CB /* tramcloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tramcloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C1B6311FD141D5009150CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98C1B6361FD141D5009150CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -303,6 +364,19 @@
 		98C8E6A41FDAA09B00F869B3 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		98C8E6A51FDAA09B00F869B3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		98C8E6A61FDAA09B00F869B3 /* SystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
+		98D9BC531FE4F99A0080C439 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
+		98D9BCB41FE502480080C439 /* TramCusHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramCusHeader.swift; sourceTree = "<group>"; };
+		98D9BCB61FE506880080C439 /* AlarmListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewCell.swift; sourceTree = "<group>"; };
+		98D9BCB91FE51C9B0080C439 /* AlarmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailViewController.swift; sourceTree = "<group>"; };
+		98E5B0F61FE4A3CE00338E95 /* IntAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntAxisValueFormatter.swift; sourceTree = "<group>"; };
+		98E5B0F81FE4A49B00338E95 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
+		98E5B0FB1FE4B04600338E95 /* AlarmChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmChartModel.swift; sourceTree = "<group>"; };
+		98E5B0FD1FE4B1AC00338E95 /* AlarmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPresenter.swift; sourceTree = "<group>"; };
+		98E5B0FF1FE4B1FD00338E95 /* AlarmChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmChartView.swift; sourceTree = "<group>"; };
+		98E5B1011FE4B22D00338E95 /* AlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListView.swift; sourceTree = "<group>"; };
+		98E5B1031FE4B23C00338E95 /* AlarmDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailView.swift; sourceTree = "<group>"; };
+		98E96DE51FDF63BC000A6B0E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		98E96DE71FDF6467000A6B0E /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		C88EBF2B8854B9E33282BEC1 /* Pods-tramcloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tramcloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tramcloud/Pods-tramcloud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,7 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				980305331FDE64F20028E766 /* Pods_tramcloud.framework in Frameworks */,
+				98D9BCB81FE509BC0080C439 /* Pods_tramcloud.framework in Frameworks */,
 				98331AC71FDA9B0500DC3E98 /* Security.framework in Frameworks */,
 				98331AC51FDA9AF600DC3E98 /* SystemConfiguration.framework in Frameworks */,
 				98331AC31FDA9AE200DC3E98 /* Foundation.framework in Frameworks */,
@@ -324,6 +398,7 @@
 				98331A7D1FDA97AF00DC3E98 /* libc++.tbd in Frameworks */,
 				98331A6D1FDA96F200DC3E98 /* Moya.framework in Frameworks */,
 				98331A7B1FDA97A800DC3E98 /* libz.tbd in Frameworks */,
+				98AC047D1FDEC3C300B588A0 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +417,7 @@
 		811165D0E44B4E6A2059A37E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98AC047C1FDEC3C300B588A0 /* NetworkExtension.framework */,
 				98331AC61FDA9B0100DC3E98 /* Security.framework */,
 				98331AC41FDA9AF000DC3E98 /* SystemConfiguration.framework */,
 				98331AC21FDA9ADA00DC3E98 /* Foundation.framework */,
@@ -364,18 +440,16 @@
 				980304E91FDE34950028E766 /* Response */,
 				980304621FDE14BA0028E766 /* HomeChartViewModel.swift */,
 				980304ED1FDE35D60028E766 /* UserViewModel.swift */,
+				981A03381FE13A1800BD5121 /* DeviceListModel.swift */,
+				981A033C1FE158F600BD5121 /* BusModel.swift */,
+				98B012761FE22A7500CEDE98 /* DeviceFilterResult.swift */,
+				986768C11FE24A3B00866969 /* ValueBackDelegate.swift */,
+				986768E21FE270E200866969 /* CanModel.swift */,
+				986768E41FE2763A00866969 /* DataStateModel.swift */,
+				98C0E5421FE36A1300CA496E /* MapModel.swift */,
+				98E5B0FB1FE4B04600338E95 /* AlarmChartModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		980304C11FDE2D610028E766 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				980304C21FDE2D790028E766 /* HomeViewModel.swift */,
-				980304C41FDE33940028E766 /* BaseViewModel.swift */,
-				980305341FDE6BA60028E766 /* AccountViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		980304E91FDE34950028E766 /* Response */ = {
@@ -389,6 +463,9 @@
 		98331AF01FDA9EA600DC3E98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				98331AFC1FDA9F0E00DC3E98 /* TableViewCell */,
+				98331AF11FDA9EAC00DC3E98 /* TabBarView */,
+				98D9BC951FE502240080C439 /* Widget */,
 				98331B051FDA9F5000DC3E98 /* BaseUIViewController.swift */,
 				98331AFF1FDA9F4F00DC3E98 /* CanHistoryViewController.swift */,
 				98331B041FDA9F5000DC3E98 /* DeviceListViewController.swift */,
@@ -396,8 +473,11 @@
 				98331B021FDA9F5000DC3E98 /* LoginController.swift */,
 				98331B031FDA9F5000DC3E98 /* TramTabBarController.swift */,
 				98331B011FDA9F5000DC3E98 /* TramUIViewController.swift */,
-				98331AFC1FDA9F0E00DC3E98 /* TableViewCell */,
-				98331AF11FDA9EAC00DC3E98 /* TabBarView */,
+				986BD8201FDFAB6E009380FA /* DeviceFilterController.swift */,
+				98C0E56B1FE3D2AE00CA496E /* PopActionSheet.swift */,
+				98C0E5B01FE3EB4E00CA496E /* CarAlarmChartController.swift */,
+				98D9BC531FE4F99A0080C439 /* AlarmListViewController.swift */,
+				98D9BCB91FE51C9B0080C439 /* AlarmDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +498,9 @@
 			isa = PBXGroup;
 			children = (
 				98C8E6871FDAA08400F869B3 /* DeviceListTableViewCell.swift */,
+				986BD8261FDFD69C009380FA /* DeviceFilterViewCell.swift */,
+				981A03401FE1687B00BD5121 /* DevicerViewCell.swift */,
+				98D9BCB61FE506880080C439 /* AlarmListTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -425,12 +508,14 @@
 		98331B0D1FDA9F5500DC3E98 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				98E5B0D71FE4A3B900338E95 /* Formatters */,
 				98331B0F1FDA9F7C00DC3E98 /* TramTabBarItem.swift */,
 				98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */,
 				98331B0E1FDA9F7C00DC3E98 /* UIImageUtil.swift */,
 				98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */,
 				980304F11FDE52300028E766 /* UserDefaultUtil.swift */,
 				980305361FDE7D290028E766 /* LToast.swift */,
+				98C0E5671FE398EF00CA496E /* DateUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -445,11 +530,11 @@
 				98A6F91F1FDAAE58001E30A5 /* Charts.framework */,
 				988DB7A61FDA96A8003709D5 /* Closures.framework */,
 				980304E41FDE345C0028E766 /* Differentiator.framework */,
-				988DB7A81FDA96A8003709D5 /* ESPullToRefresh.framework */,
-				988DB7AA1FDA96A8003709D5 /* ESPullToRefresh.bundle */,
 				980305321FDE64ED0028E766 /* HandyJSON.framework */,
 				988DB7AC1FDA96A8003709D5 /* Kingfisher.framework */,
 				988DB7AE1FDA96A8003709D5 /* KSPhotoBrowser.framework */,
+				98A463DA1FDF6BB600DDD545 /* MBProgressHUD.framework */,
+				98D9BCB31FE502250080C439 /* MJRefresh.framework */,
 				988DB7B01FDA96A8003709D5 /* Moya.framework */,
 				988DB7B21FDA96A8003709D5 /* NSObject_Rx.framework */,
 				988DB7B41FDA96A8003709D5 /* Pods_tramcloud.framework */,
@@ -458,8 +543,8 @@
 				988DB7BA1FDA96A8003709D5 /* RxCocoa.framework */,
 				980304E61FDE345C0028E766 /* RxDataSources.framework */,
 				988DB7BC1FDA96A8003709D5 /* RxSwift.framework */,
-				988DB7BE1FDA96A8003709D5 /* SlideMenuControllerSwift.framework */,
 				988DB7C01FDA96A8003709D5 /* SnapKit.framework */,
+				98C0E58D1FE3D3CA00CA496E /* Spring.framework */,
 				988DB7C21FDA96A8003709D5 /* SwifterSwift.framework */,
 				988DB7C41FDA96A8003709D5 /* SwiftyBeaver.framework */,
 				988DB7C81FDA96A8003709D5 /* Then.framework */,
@@ -473,6 +558,7 @@
 		98C1B6251FD141D5009150CB = {
 			isa = PBXGroup;
 			children = (
+				98C0E5651FE37B3000CA496E /* AMap.bundle */,
 				98331A7E1FDA97D400DC3E98 /* tramcloud-Bridging-Header.h */,
 				988DB7811FDA96A7003709D5 /* Pods.xcodeproj */,
 				98C1B6301FD141D5009150CB /* tramcloud */,
@@ -493,7 +579,8 @@
 		98C1B6301FD141D5009150CB /* tramcloud */ = {
 			isa = PBXGroup;
 			children = (
-				980304C11FDE2D610028E766 /* ViewModel */,
+				98E96DE31FDF63A5000A6B0E /* Views */,
+				98E96DC61FDF639D000A6B0E /* Presenter */,
 				980304611FDE14A20028E766 /* Model */,
 				98C8E6811FDA9FE500F869B3 /* RxSwift */,
 				98331B0D1FDA9F5500DC3E98 /* Util */,
@@ -515,6 +602,55 @@
 				98AC04791FDE846D00B588A0 /* Network.swift */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		98D9BC951FE502240080C439 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				98D9BCB41FE502480080C439 /* TramCusHeader.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		98E5B0D71FE4A3B900338E95 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				98E5B0F61FE4A3CE00338E95 /* IntAxisValueFormatter.swift */,
+				98E5B0F81FE4A49B00338E95 /* LargeValueFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		98E96DC61FDF639D000A6B0E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				98E96DE71FDF6467000A6B0E /* AccountPresenter.swift */,
+				98A463B91FDF6A6000DDD545 /* BasePresenter.swift */,
+				986BD81E1FDF7C1B009380FA /* HomePresenter.swift */,
+				986BD8241FDFCE08009380FA /* DeviceFilterPresenter.swift */,
+				981A033A1FE13A9000BD5121 /* DevicePresenter.swift */,
+				986768E61FE276F000866969 /* CanPresenter.swift */,
+				98C0E5631FE3715E00CA496E /* MapPresenter.swift */,
+				98E5B0FD1FE4B1AC00338E95 /* AlarmPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		98E96DE31FDF63A5000A6B0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98E96DE51FDF63BC000A6B0E /* LoginView.swift */,
+				986BD7FF1FDF7A6A009380FA /* HomeView.swift */,
+				986BD8221FDFCD94009380FA /* DeviceFilterView.swift */,
+				981A03361FE139E000BD5121 /* DeviceView.swift */,
+				981A033E1FE15A1A00BD5121 /* BusDetailView.swift */,
+				986768E01FE270BE00866969 /* CanView.swift */,
+				98C0E5611FE36BEF00CA496E /* MapView.swift */,
+				98E5B0FF1FE4B1FD00338E95 /* AlarmChartView.swift */,
+				98E5B1011FE4B22D00338E95 /* AlarmListView.swift */,
+				98E5B1031FE4B23C00338E95 /* AlarmDetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +689,11 @@
 					98C1B62D1FD141D5009150CB = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -637,20 +778,6 @@
 			remoteRef = 988DB7A51FDA96A8003709D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		988DB7A81FDA96A8003709D5 /* ESPullToRefresh.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ESPullToRefresh.framework;
-			remoteRef = 988DB7A71FDA96A8003709D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		988DB7AA1FDA96A8003709D5 /* ESPullToRefresh.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ESPullToRefresh.bundle;
-			remoteRef = 988DB7A91FDA96A8003709D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		988DB7AC1FDA96A8003709D5 /* Kingfisher.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -714,13 +841,6 @@
 			remoteRef = 988DB7BB1FDA96A8003709D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		988DB7BE1FDA96A8003709D5 /* SlideMenuControllerSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SlideMenuControllerSwift.framework;
-			remoteRef = 988DB7BD1FDA96A8003709D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		988DB7C01FDA96A8003709D5 /* SnapKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -770,11 +890,32 @@
 			remoteRef = 988DB7CD1FDA96A8003709D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		98A463DA1FDF6BB600DDD545 /* MBProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBProgressHUD.framework;
+			remoteRef = 98A463D91FDF6BB600DDD545 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		98A6F91F1FDAAE58001E30A5 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
 			remoteRef = 98A6F91E1FDAAE58001E30A5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98C0E58D1FE3D3CA00CA496E /* Spring.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Spring.framework;
+			remoteRef = 98C0E58C1FE3D3CA00CA496E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98D9BCB31FE502250080C439 /* MJRefresh.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MJRefresh.framework;
+			remoteRef = 98D9BCB21FE502250080C439 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -784,6 +925,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C0E5661FE37B3000CA496E /* AMap.bundle in Resources */,
 				98C1B63C1FD141D5009150CB /* LaunchScreen.storyboard in Resources */,
 				98C1B6391FD141D5009150CB /* Assets.xcassets in Resources */,
 				98C1B6371FD141D5009150CB /* Main.storyboard in Resources */,
@@ -839,10 +981,11 @@
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/KSPhotoBrowser/KSPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -850,8 +993,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
@@ -867,10 +1010,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -878,8 +1022,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
@@ -900,33 +1044,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				98331B0C1FDA9F5000DC3E98 /* BaseUIViewController.swift in Sources */,
-				980304C31FDE2D790028E766 /* HomeViewModel.swift in Sources */,
 				980305131FDE63E50028E766 /* ToModelExtension.swift in Sources */,
+				981A03371FE139E000BD5121 /* DeviceView.swift in Sources */,
+				98E5B0F71FE4A3CE00338E95 /* IntAxisValueFormatter.swift in Sources */,
+				98E5B1021FE4B22D00338E95 /* AlarmListView.swift in Sources */,
 				98AC047A1FDE846D00B588A0 /* Network.swift in Sources */,
 				98331B151FDA9F7C00DC3E98 /* UIKitUitl.swift in Sources */,
+				98C0E56C1FE3D2AE00CA496E /* PopActionSheet.swift in Sources */,
 				98331B091FDA9F5000DC3E98 /* LoginController.swift in Sources */,
 				98331B061FDA9F5000DC3E98 /* CanHistoryViewController.swift in Sources */,
+				98C0E5641FE3715E00CA496E /* MapPresenter.swift in Sources */,
 				980304EB1FDE34AC0028E766 /* BaseResult.swift in Sources */,
+				98E5B1001FE4B1FD00338E95 /* AlarmChartView.swift in Sources */,
+				98E5B0F91FE4A49B00338E95 /* LargeValueFormatter.swift in Sources */,
+				98D9BC541FE4F99A0080C439 /* AlarmListViewController.swift in Sources */,
 				98331B081FDA9F5000DC3E98 /* TramUIViewController.swift in Sources */,
+				981A033D1FE158F600BD5121 /* BusModel.swift in Sources */,
 				980304F21FDE52300028E766 /* UserDefaultUtil.swift in Sources */,
+				986768E51FE2763A00866969 /* DataStateModel.swift in Sources */,
+				98A463BA1FDF6A6000DDD545 /* BasePresenter.swift in Sources */,
+				986BD81F1FDF7C1B009380FA /* HomePresenter.swift in Sources */,
+				98C0E5621FE36BEF00CA496E /* MapView.swift in Sources */,
+				981A033B1FE13A9000BD5121 /* DevicePresenter.swift in Sources */,
+				98D9BCB71FE506880080C439 /* AlarmListTableViewCell.swift in Sources */,
 				98331B071FDA9F5000DC3E98 /* DeviceViewController.swift in Sources */,
 				98C8E6AA1FDAA09B00F869B3 /* HomeViewController.swift in Sources */,
 				98C8E6A91FDAA09B00F869B3 /* VideoViewController.swift in Sources */,
+				986768E11FE270BE00866969 /* CanView.swift in Sources */,
+				98E5B0FC1FE4B04600338E95 /* AlarmChartModel.swift in Sources */,
 				98C1B6321FD141D5009150CB /* AppDelegate.swift in Sources */,
 				98C8E6AB1FDAA09B00F869B3 /* SystemViewController.swift in Sources */,
 				98331B0B1FDA9F5000DC3E98 /* DeviceListViewController.swift in Sources */,
+				981A03411FE1687B00BD5121 /* DevicerViewCell.swift in Sources */,
 				98331B141FDA9F7C00DC3E98 /* UIColorUtil.swift in Sources */,
-				980304C51FDE33940028E766 /* BaseViewModel.swift in Sources */,
+				98E96DE61FDF63BC000A6B0E /* LoginView.swift in Sources */,
+				981A03391FE13A1800BD5121 /* DeviceListModel.swift in Sources */,
+				986BD8251FDFCE08009380FA /* DeviceFilterPresenter.swift in Sources */,
+				98E5B1041FE4B23C00338E95 /* AlarmDetailView.swift in Sources */,
+				986BD8271FDFD69C009380FA /* DeviceFilterViewCell.swift in Sources */,
+				98B012771FE22A7500CEDE98 /* DeviceFilterResult.swift in Sources */,
 				98331B121FDA9F7C00DC3E98 /* UIImageUtil.swift in Sources */,
+				986BD8231FDFCD94009380FA /* DeviceFilterView.swift in Sources */,
 				980305371FDE7D290028E766 /* LToast.swift in Sources */,
 				98C8E6A81FDAA09B00F869B3 /* MapViewController.swift in Sources */,
-				980305351FDE6BA60028E766 /* AccountViewModel.swift in Sources */,
+				98E96DE81FDF6467000A6B0E /* AccountPresenter.swift in Sources */,
+				981A033F1FE15A1A00BD5121 /* BusDetailView.swift in Sources */,
 				980304631FDE14BA0028E766 /* HomeChartViewModel.swift in Sources */,
 				98331B0A1FDA9F5000DC3E98 /* TramTabBarController.swift in Sources */,
+				98C0E5681FE398EF00CA496E /* DateUtil.swift in Sources */,
+				98C0E5B11FE3EB4E00CA496E /* CarAlarmChartController.swift in Sources */,
+				986BD8001FDF7A6A009380FA /* HomeView.swift in Sources */,
+				98D9BCB51FE502480080C439 /* TramCusHeader.swift in Sources */,
 				98C8E6851FDAA02400F869B3 /* ApiManager.swift in Sources */,
+				986768C21FE24A3B00866969 /* ValueBackDelegate.swift in Sources */,
+				98E5B0FE1FE4B1AC00338E95 /* AlarmPresenter.swift in Sources */,
+				98C0E5431FE36A1300CA496E /* MapModel.swift in Sources */,
+				986768E71FE276F000866969 /* CanPresenter.swift in Sources */,
+				98D9BCBA1FE51C9B0080C439 /* AlarmDetailViewController.swift in Sources */,
 				98C8E6A11FDAA08400F869B3 /* DeviceListTableViewCell.swift in Sources */,
 				98331B131FDA9F7C00DC3E98 /* TramTabBarItem.swift in Sources */,
 				980304EE1FDE35D60028E766 /* UserViewModel.swift in Sources */,
+				986768E31FE270E200866969 /* CanModel.swift in Sources */,
+				986BD8211FDFAB6E009380FA /* DeviceFilterController.swift in Sources */,
 				98C8E6A71FDAA09B00F869B3 /* CanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1065,8 +1244,10 @@
 			baseConfigurationReference = C88EBF2B8854B9E33282BEC1 /* Pods-tramcloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = tramcloud/tramcloud.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9C9ADS3G4;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1074,11 +1255,11 @@
 				INFOPLIST_FILE = tramcloud/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sztvis.tramcloud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tvis.tramcloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "tramcloud-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1087,8 +1268,10 @@
 			baseConfigurationReference = 904C0F8D1D4D5EF1B816AE9B /* Pods-tramcloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = tramcloud/tramcloud.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9C9ADS3G4;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1096,11 +1279,11 @@
 				INFOPLIST_FILE = tramcloud/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sztvis.tramcloud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tvis.tramcloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "tramcloud-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

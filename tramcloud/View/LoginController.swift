@@ -13,16 +13,19 @@ import RxCocoa
 import NSObject_Rx
 import Closures
 import AttributedLib
-class LoginController: UIViewController{
+class LoginController: UIViewController,LoginView{
+    
+    
     let bounds = UIScreen.main.bounds
     var txtusername:UITextField!
     var txtpassword:UITextField!
     var loginButton:UIButton!
     
-    fileprivate let vm = AccountViewModel()
+    var presenter:AccountPresenter!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         let size=UIScreen.main.bounds.size
         let height=size.width*231/320
         self.view.backgroundColor=UIColor.hexStringToColor(hexString: "f1f3f2")
@@ -48,9 +51,12 @@ class LoginController: UIViewController{
         loginButton.addTarget(self, action:#selector(Handle(_:)), for:.touchUpInside)
         loginButton.backgroundColor = UIColor.hexStringToColor(hexString: "0b9bee")
         loginButton.layer.cornerRadius=3
-        step()
+       
+        presenter = AccountPresenter(self,self.view)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     @objc func Handle(_ sender:UIButton) {
         let username = txtusername.text as! String
         let password = txtpassword.text as! String
@@ -62,36 +68,72 @@ class LoginController: UIViewController{
             Toast.fail(with: "密码不能为空!")
             return
         }
-        vm.Login(username, password, "")
-        
+        presenter.Login(username,password,"")
     }
-   
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc func keyBoardWillShow(_ notification:Notification){
+        let kbInfo = notification.userInfo
+        //获得键盘size
+        let kbRect = (kbInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let changeY = kbRect.origin.y - UIScreen.main.bounds.size.height
+        let duration = kbInfo?[UIKeyboardAnimationDurationUserInfoKey] as! Double
+        UIView.animate(withDuration:duration){
+            self.view.transform = CGAffineTransform(translationX: 0, y: -160)
+        }
+    }
+    @objc func keyBoardWillHide(_ notification:Notification){
+        let kbInfo = notification.userInfo
+        let kbRect = (kbInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let changeY = kbRect.origin.y
+        let duration = kbInfo?[UIKeyboardAnimationDurationUserInfoKey] as! Double
+        UIView.animate(withDuration:duration){
+            self.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+    }
    
 }
-extension LoginController{
-    func step(){
-        vm
-        .loginResult
-        .asObservable()
-            .observeOn(MainScheduler.asyncInstance)
-            .filter({$0.success != nil})
-            .subscribe(onNext: { [unowned self] (model) in
-                if(model != nil){
-                    if(model.success)!{
-                        Toast.success(with: "登录成功!")
-                    }else{
-                        Toast.fail(with: model.info!)
-                    }
-                }
-            })
-            .disposed(by: rx.disposeBag)
+extension LoginController:UITextFieldDelegate{
+    
+    
+    //处理接收结果
+    func GetLoginResult(_ result: BaseResult<UserInfo>) {
+        if(!result.success!){
+            Toast.fail(with: result.info)
+        }else{
+            Toast.success(with: result.info)
+            
+            let encodeObject = result.result!.toJSONString(prettyPrint: false)
+            //print("userinfo->" + encodeObject!)
+            UserDefaultUtil.setNormalDefault("userinfo", encodeObject)
+            UserDefaultUtil.setNormalDefault("username", result.result!.UserName)
+            UserDefaultUtil.setNormalDefault("access_token", result.result!.AccessToken)
+            UserDefaultUtil.setNormalDefault("refresh_token", result.result!.RefreshToken)
+            let homeController = TramTabBarController()
+            self.present(homeController, animated: true, completion: nil)
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        UIView.animate(withDuration: 0.4) {
+            self.view.frame.origin.y = 0
+        }
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("点击了textfiled")
+        UIView.animate(withDuration: 0.4) {
+            self.view.frame.origin.y = -150
+        }
     }
 }
+
 
 

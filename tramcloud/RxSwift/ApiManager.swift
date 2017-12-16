@@ -43,7 +43,7 @@ enum ApiManager {
 extension ApiManager:TargetType{
     
     var baseURL: URL {
-        return URL.init(string: "http://112.94.162.133:8089")!
+        return URL.init(string: AppDelegate().BaseUrl)!
     }
     var path: String {
         switch self {
@@ -60,7 +60,7 @@ extension ApiManager:TargetType{
         case .GetHomeCharts(_, _):
             return "/api/v1/home/getcharts"
         case .GetDeviceByLine(_):
-            return "/api/v1/home/getdevicebyline"
+            return "/api/v1/home/getdevicesbyline"
         case .GetChannelsByDevice(_):
             return "/api/v1/home/getchannelbydevice"
         case .GetDeviceListByLine(_, _):
@@ -267,7 +267,7 @@ extension ApiManager:TargetType{
             return .requestParameters(parameters:params,encoding:URLEncoding.default)
         case .GetMapInfoV2(let code,let time):
             var params:[String:Any] = [:]
-            params["code"] = code
+            params["codes"] = code
             params["time"] = time
             return .requestParameters(parameters:params,encoding:URLEncoding.default)
         case .GetUnSafeList(let userId, let daytype, let unsafetype, let lineId, let page, let limit):

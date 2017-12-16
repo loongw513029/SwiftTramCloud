@@ -30,7 +30,7 @@ class DeviceListTableViewCell: UITableViewCell {
     }
     
     func initView(){
-        let width = self.frame.width / 4
+        let width = UIScreen.main.bounds.width / 4
         devicecodeLabel = UIKitUtil.CreateUILable(self, text: "", x: 0, y: 10, width: width, height: 25, textColor: "000000", textSize: 13, textAlign: .center)
         busnumberLabel = UIKitUtil.CreateUILable(self, text: "", x: width, y: 10, width: width, height: 25, textColor: "000000", textSize: 13, textAlign: .center)
         drivernameLabel = UIKitUtil.CreateUILable(self, text: "", x: width*2, y: 10, width: width, height: 25, textColor: "000000", textSize: 13, textAlign: .center)

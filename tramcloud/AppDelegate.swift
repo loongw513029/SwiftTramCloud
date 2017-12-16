@@ -13,20 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let TabBarHeight = UIScreen.main.bounds.height*50/568
+    let StatusHeight = UIApplication.shared.statusBarFrame.height
+    var BaseUrl:String = "http://112.94.162.133:8089"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AMapServices.shared().apiKey = "5dc5cd0d8f46b98e2468caf44be0fc08"
         self.window = UIWindow(frame:UIScreen.main.bounds)
-        
+        let userInfo = UserDefaultUtil.getNormalUserDefault("userinfo") as! String
         //let rootVC = TramTabBarController()
         //let sb=UIStoryboard(name: "Main", bundle: nil)
         //let vc=sb.instantiateViewController(withIdentifier: "TramUIViewController")
         //let nav = UINavigationController(rootViewController:TramTabBarController())
-        self.window?.rootViewController = LoginController()
+        self.window?.rootViewController = userInfo == "" ? LoginController() : TramTabBarController()
         //self.window!.makeKeyAndVisible()
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

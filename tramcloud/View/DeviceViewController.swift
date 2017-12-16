@@ -7,7 +7,10 @@
 //
 
 import UIKit
-class DeviceViewController: TramUIViewController {
+class DeviceViewController: TramUIViewController,BusDetailView {
+    
+    var DeviceId:Int?
+    var deviceListModel:DeviceListModel!
     var deviceImage:UIImageView!
     var deviceTypeLabel:UILabel!
     var deviceOnlineLabel:UILabel!
@@ -17,10 +20,15 @@ class DeviceViewController: TramUIViewController {
     var mileageLabel:UILabel!
     var dianhaoLabel:UILabel!
     var gashaoLabel:UILabel!
+    var devicePresenter:DevicePresenter!
     override func viewDidLoad() {
         super.viewDidLoad()
-        CustomNavigationAnalysisBar("单车分析", false, true, false, "N130", 7)
+        CustomNavigationAnalysisBar("单车分析", false, true, false,deviceListModel.DeviceCode!, 7,1)
         initView()
+        if(devicePresenter == nil){
+            devicePresenter = DevicePresenter(self.view,self)
+        }
+        devicePresenter.GetBusDetail(1, deviceListModel.Id!)
     }
     
     func initView(){
@@ -108,5 +116,28 @@ class DeviceViewController: TramUIViewController {
         default:
             break
         }
+    }
+}
+
+extension DeviceViewController{
+    
+    func GetBusDetail(_ data: BusModel) {
+        self.initData(data)
+    }
+    
+    func initData(_ busModel:BusModel){
+        deviceTypeLabel.text = busModel.BusTypeName
+        if(busModel.Status == 1){
+            deviceOnlineLabel.text = "在线"
+            deviceOnlineLabel.backgroundColor = UIColor.hexStringToColor(hexString: "25d73a")
+        }else{
+            deviceOnlineLabel.text = "离线"
+            deviceOnlineLabel.backgroundColor = UIColor.hexStringToColor(hexString: "dedede")
+        }
+        lineLabel.text = busModel.LineName
+        driverLabel.text = busModel.DrvierName == nil ? "" :busModel.DrvierName
+        mileageLabel.text = "里程\n"+String(busModel.Mileage!)+"\nKM"
+        dianhaoLabel.text = "电耗\n"+String(busModel.Electric!)+"\nKW/H"
+        gashaoLabel.text = "油耗\n"+String(busModel.Oil!)+"\nL"
     }
 }

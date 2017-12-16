@@ -22,6 +22,37 @@ struct ChartListViewModel : HandyJSON{
 }
 struct ChartData : HandyJSON{
     var AxisName:String?
-    var AxisValue:Double?
+    var AxisValue:UInt?
+}
+
+struct AppHomeModel {
+    var Lines:[AppSelectModel]?
+}
+struct AppSelectModel {
+    var Id:Int?
+    var Name:String?
+    var IsOnline:Bool?
+    var NumData:AppDropDownModel?
+}
+struct AppDropDownModel :HandyJSON {
+    var Id:Int?
+    var Name:String?
+    var IsOnline:Bool?
+}
+
+struct LineModel : HandyJSON{
+    var Lines:[LineDetailModel]!
+}
+struct LineDetailModel : HandyJSON {
+    var Id:Int!
+    var Name:String!
+    var IsOnline:Bool!
+    var NumData:NumDataModel!
+}
+struct NumDataModel : HandyJSON {
+    var CarNum:Int!
+    var OnLineNum:Int!
+    var LineNum:Int!
+    var UnSafeNum:Int!
 }
 

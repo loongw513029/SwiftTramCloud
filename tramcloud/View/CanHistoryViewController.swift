@@ -19,7 +19,7 @@ class CanHistoryViewController: TramUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.hexStringToColor(hexString: "dedede")
-        CustomNavigationAnalysisBar("统计分析", false, true, false, "250路", 7)
+        CustomNavigationAnalysisBar("统计分析", false, true, false, "250路", 7,1)
         initView()
     }
     

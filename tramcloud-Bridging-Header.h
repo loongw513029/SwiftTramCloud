@@ -10,3 +10,5 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <MAMapKit/MAMapKit.h>
+#import "Pods/MBProgressHUD/MBProgressHUD.h"
+

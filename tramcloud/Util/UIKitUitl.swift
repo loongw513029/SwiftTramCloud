@@ -12,8 +12,9 @@ public class UIKitUtil {
     //创建UIView
     static func CreateUiView(_ parentView:UIView?,x:CGFloat,y:CGFloat,width:CGFloat,height:CGFloat,backgroundColor:String) -> UIView{
         let view = UIView(frame:CGRect(x:x,y:y,width:width,height:height))
-        view.backgroundColor = UIColor.hexStringToColor(hexString: backgroundColor)
-        
+        if(backgroundColor != ""){
+            view.backgroundColor = UIColor.hexStringToColor(hexString: backgroundColor)
+        }
         if(parentView != nil){
             parentView?.addSubview(view)
         }

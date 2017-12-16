@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HandyJSON
 public class UserDefaultUtil {
     //存储对象
     static func setNormalDefault(_ key:String,_ value:Any?){
@@ -30,7 +31,13 @@ public class UserDefaultUtil {
     
     //通过key值查找结果
     static func getNormalUserDefault(_ key:String) -> Any?{
-        return UserDefaults.standard.value(forKey: key)
+        return UserDefaults.standard.value(forKey: key) == nil ? "" : UserDefaults.standard.value(forKey: key)
+    }
+    
+    static func getUserInfo()->UserInfo{
+        var userinfoStr = getNormalUserDefault("userinfo") as! String
+        var userInfo = JSONDeserializer<UserInfo>.deserializeFrom(json: userinfoStr as! String)
+        return userInfo!
     }
 }
 

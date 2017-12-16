@@ -26,7 +26,8 @@ class TramTabBarController: UITabBarController {
     
     //创建tabBar
     func CreatTabBar()  {
-        _backView = UIView(frame:CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:49))
+        let tbHeight = AppDelegate().TabBarHeight        
+        _backView = UIView(frame:CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:tbHeight))
          for  M in 0 ..< VCArr.count {
             nav = UINavigationController(rootViewController:(VCArr[M] as AnyObject as! UIViewController))
             if(M != 2){
@@ -35,7 +36,7 @@ class TramTabBarController: UITabBarController {
                 nav.tabBarItem.title = NameArr[M]
             }
             else{
-                let reSize = CGSize(width: 45, height: 45)
+                let reSize = CGSize(width: tbHeight*0.8, height: tbHeight*0.8)
                 nav.tabBarItem.image = UIImage(named:PicArr[M])?.reSizeImage(reSize: reSize)
                 nav.tabBarItem.selectedImage = UIImage(named:PicArr[M])?.reSizeImage(reSize: reSize)
                 nav.tabBarItem.imageInsets=UIEdgeInsetsMake(6,0,-6,0)
@@ -67,6 +68,10 @@ class TramTabBarController: UITabBarController {
         self.selectedIndex = 2
         
     }
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        let tabIndex = tabBar.items?.index(of:item)
+//
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

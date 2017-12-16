@@ -15,7 +15,7 @@ struct Toast {
     
     
     static func show(with text:String) {
-        let toastView = CFNotifyView.classicWith(title: "提示", body: text, theme:.info(.light))
+        let toastView = CFNotifyView.classicWith(title: "提示", body: text, theme:.info(.dark))
         var classicViewConfig = CFNotify.Config()
         classicViewConfig.initPosition = .bottom(.random)
         classicViewConfig.appearPosition = .bottom
@@ -24,7 +24,7 @@ struct Toast {
     }
     
     static func success(with text:String) {
-        let toastView = CFNotifyView.classicWith(title: "提示", body: text, theme: .success(.light))
+        let toastView = CFNotifyView.classicWith(title: "提示", body: text, theme: .success(.dark))
         var classicViewConfig = CFNotify.Config()
         classicViewConfig.initPosition = .bottom(.random)
         classicViewConfig.appearPosition = .bottom
@@ -33,7 +33,7 @@ struct Toast {
     }
     
     static func fail(with text:String) {
-        let toastView = CFNotifyView.classicWith(title: "提示", body: text, theme: .fail(.light))
+        let toastView = CFNotifyView.classicWith(title: "提示", body: text, theme: .fail(.dark))
         var classicViewConfig = CFNotify.Config()
         classicViewConfig.initPosition = .bottom(.random)
         classicViewConfig.appearPosition = .bottom

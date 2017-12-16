@@ -9,8 +9,8 @@
 import Foundation
 import HandyJSON
 struct BaseResult<T> :HandyJSON{
-    var success:Bool?
-    var info:String?
-    var code:Int?
-    var result:T?
+    var success:Bool!
+    var info:String!
+    var code:Int!
+    var result:T!
 }
