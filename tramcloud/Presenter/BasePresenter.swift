@@ -12,14 +12,16 @@ public class BasePresenter {
     func showProgress(_ view:UIView,_ content:String){
         var cont = content
         if(content == ""){
-            cont = "Loading..."
+            cont = "数据请求中"
         }
         hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.label.text = cont
         hud.dimBackground = true
         //hud.hide(animated: true, afterDelay: 0.8)
     }
-    
+    func RequestFail(){
+        Toast.fail(with: "数据请求失败!")
+    }
     func hideProgress(){
         if(hud != nil)
         {

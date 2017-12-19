@@ -10,10 +10,14 @@ import Foundation
 class CanPresenter: BasePresenter {
     var view:UIView!
     var canView:CanView!
-    
+    var canHistoryView:CanHistoryView!
     init(_ view:UIView,_ canView:CanView) {
         self.view = view
         self.canView = canView
+    }
+    init(_ view:UIView,_ canHistoryView:CanHistoryView) {
+        self.view = view
+        self.canHistoryView = canHistoryView
     }
     
     func GetCanData(_ code:String){
@@ -45,6 +49,27 @@ class CanPresenter: BasePresenter {
                     self.canView.GetCanState(model.result!)
                 }catch{}
                 self.hideProgress()
+            }) { (error) in
+                self.hideProgress()
+        }
+    }
+    
+    func GetCanHistory(_ lineId:Int,_ userId:Int,_ dayType:Int){
+        showProgress(self.view, "")
+        Network.provider.rx
+        .request(.GetCanHistorys(lineId, userId, dayType))
+        .filterSuccessfulStatusCodes()
+            .subscribe(onSuccess: { (response) in
+                self.hideProgress()
+                do{
+                    let model = try response.mapModel(BaseResult<CanHistoryModel>.self)
+                    if(model.success)!{
+                        self.canHistoryView.GetCanHistoryResult(model.result!)
+                    }
+                    else{
+                        self.RequestFail()
+                    }
+                }catch{}
             }) { (error) in
                 self.hideProgress()
         }

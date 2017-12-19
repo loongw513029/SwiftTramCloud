@@ -154,6 +154,11 @@ class HomeViewController: TramUIViewController,ChartViewDelegate,HomeView {
             self.hidesBottomBarWhenPushed = true
             self.navigationController!.pushViewController(canAlarmView,animated:true)
             break
+        case 6:
+            let inspectView = InspectViewController()
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController!.pushViewController(inspectView,animated:true)
+            break
         default:
             break
         }

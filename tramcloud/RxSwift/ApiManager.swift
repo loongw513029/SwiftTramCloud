@@ -70,7 +70,7 @@ extension ApiManager:TargetType{
         case .GetAlarmDetailInfo(_):
             return "/api/v1/alarm/detail"
         case .GetDeviceInspectList(_, _, _, _, _):
-            return "/api/v1/device/inspectlist"
+            return "/api/v2/device/inspect"
         case .GetUnSafeList(_, _, _, _, _, _):
             return "/api/v1/device/unsafelist"
         case .GetDeviceRepairList(_, _, _):

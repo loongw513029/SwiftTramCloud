@@ -19,6 +19,11 @@
 		981A033D1FE158F600BD5121 /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A033C1FE158F600BD5121 /* BusModel.swift */; };
 		981A033F1FE15A1A00BD5121 /* BusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A033E1FE15A1A00BD5121 /* BusDetailView.swift */; };
 		981A03411FE1687B00BD5121 /* DevicerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A03401FE1687B00BD5121 /* DevicerViewCell.swift */; };
+		981D79E71FE8BC040084D19D /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981D79CA1FE8BC040084D19D /* VideoToolbox.framework */; };
+		981D79EA1FE8C3DB0084D19D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 981D79E91FE8C3DB0084D19D /* GCDAsyncSocket.m */; };
+		981D79EC1FE8D2A90084D19D /* SocketRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D79EB1FE8D2A90084D19D /* SocketRequestModel.swift */; };
+		982463BA1FE747FE001AC9F7 /* ImagePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982463B91FE747FE001AC9F7 /* ImagePreviewVC.swift */; };
+		982463D81FE74840001AC9F7 /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982463D71FE74840001AC9F7 /* ImagePreviewCell.swift */; };
 		98331A6D1FDA96F200DC3E98 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988DB7B01FDA96A8003709D5 /* Moya.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		98331A6F1FDA972500DC3E98 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 98331A6E1FDA971700DC3E98 /* libstdc++.6.0.9.tbd */; };
 		98331A741FDA974700DC3E98 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98331A701FDA974700DC3E98 /* MAMapKit.framework */; };
@@ -42,6 +47,16 @@
 		98331B131FDA9F7C00DC3E98 /* TramTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B0F1FDA9F7C00DC3E98 /* TramTabBarItem.swift */; };
 		98331B141FDA9F7C00DC3E98 /* UIColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */; };
 		98331B151FDA9F7C00DC3E98 /* UIKitUitl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */; };
+		9860E06B1FE760EE00394312 /* CanHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E06A1FE760EE00394312 /* CanHistoryView.swift */; };
+		9860E06D1FE7612000394312 /* CanHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E06C1FE7612000394312 /* CanHistoryModel.swift */; };
+		9860E06F1FE78D3000394312 /* InspectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E06E1FE78D3000394312 /* InspectViewController.swift */; };
+		9860E0711FE78DD600394312 /* DeviceInspectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E0701FE78DD600394312 /* DeviceInspectModel.swift */; };
+		9860E0731FE7919E00394312 /* DeviceInspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E0721FE7919E00394312 /* DeviceInspectView.swift */; };
+		9860E0831FE7A03900394312 /* TGDropBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E0821FE7A03900394312 /* TGDropBoxView.swift */; };
+		9860E0851FE7B62600394312 /* DeviceInspectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E0841FE7B62600394312 /* DeviceInspectTableViewCell.swift */; };
+		9860E0871FE7BAE300394312 /* InspectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E0861FE7BAE300394312 /* InspectDetailViewController.swift */; };
+		9860E0891FE7BE0700394312 /* InspectDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E0881FE7BE0700394312 /* InspectDetailTableViewCell.swift */; };
+		9860E08B1FE7BE1D00394312 /* InspectDetailAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860E08A1FE7BE1D00394312 /* InspectDetailAdapterModel.swift */; };
 		986768C21FE24A3B00866969 /* ValueBackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768C11FE24A3B00866969 /* ValueBackDelegate.swift */; };
 		986768E11FE270BE00866969 /* CanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768E01FE270BE00866969 /* CanView.swift */; };
 		986768E31FE270E200866969 /* CanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986768E21FE270E200866969 /* CanModel.swift */; };
@@ -305,6 +320,12 @@
 		981A033C1FE158F600BD5121 /* BusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
 		981A033E1FE15A1A00BD5121 /* BusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDetailView.swift; sourceTree = "<group>"; };
 		981A03401FE1687B00BD5121 /* DevicerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicerViewCell.swift; sourceTree = "<group>"; };
+		981D79CA1FE8BC040084D19D /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		981D79E81FE8C3DB0084D19D /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		981D79E91FE8C3DB0084D19D /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		981D79EB1FE8D2A90084D19D /* SocketRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketRequestModel.swift; sourceTree = "<group>"; };
+		982463B91FE747FE001AC9F7 /* ImagePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewVC.swift; sourceTree = "<group>"; };
+		982463D71FE74840001AC9F7 /* ImagePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
 		98331A6E1FDA971700DC3E98 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		98331A701FDA974700DC3E98 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		98331A711FDA974700DC3E98 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
@@ -328,6 +349,16 @@
 		98331B0F1FDA9F7C00DC3E98 /* TramTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TramTabBarItem.swift; sourceTree = "<group>"; };
 		98331B101FDA9F7C00DC3E98 /* UIColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtil.swift; sourceTree = "<group>"; };
 		98331B111FDA9F7C00DC3E98 /* UIKitUitl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitUitl.swift; sourceTree = "<group>"; };
+		9860E06A1FE760EE00394312 /* CanHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanHistoryView.swift; sourceTree = "<group>"; };
+		9860E06C1FE7612000394312 /* CanHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanHistoryModel.swift; sourceTree = "<group>"; };
+		9860E06E1FE78D3000394312 /* InspectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectViewController.swift; sourceTree = "<group>"; };
+		9860E0701FE78DD600394312 /* DeviceInspectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInspectModel.swift; sourceTree = "<group>"; };
+		9860E0721FE7919E00394312 /* DeviceInspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInspectView.swift; sourceTree = "<group>"; };
+		9860E0821FE7A03900394312 /* TGDropBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TGDropBoxView.swift; sourceTree = "<group>"; };
+		9860E0841FE7B62600394312 /* DeviceInspectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInspectTableViewCell.swift; sourceTree = "<group>"; };
+		9860E0861FE7BAE300394312 /* InspectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectDetailViewController.swift; sourceTree = "<group>"; };
+		9860E0881FE7BE0700394312 /* InspectDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectDetailTableViewCell.swift; sourceTree = "<group>"; };
+		9860E08A1FE7BE1D00394312 /* InspectDetailAdapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectDetailAdapterModel.swift; sourceTree = "<group>"; };
 		986768C11FE24A3B00866969 /* ValueBackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBackDelegate.swift; sourceTree = "<group>"; };
 		986768E01FE270BE00866969 /* CanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanView.swift; sourceTree = "<group>"; };
 		986768E21FE270E200866969 /* CanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanModel.swift; sourceTree = "<group>"; };
@@ -385,6 +416,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981D79E71FE8BC040084D19D /* VideoToolbox.framework in Frameworks */,
 				98D9BCB81FE509BC0080C439 /* Pods_tramcloud.framework in Frameworks */,
 				98331AC71FDA9B0500DC3E98 /* Security.framework in Frameworks */,
 				98331AC51FDA9AF600DC3E98 /* SystemConfiguration.framework in Frameworks */,
@@ -417,6 +449,7 @@
 		811165D0E44B4E6A2059A37E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				981D79CA1FE8BC040084D19D /* VideoToolbox.framework */,
 				98AC047C1FDEC3C300B588A0 /* NetworkExtension.framework */,
 				98331AC61FDA9B0100DC3E98 /* Security.framework */,
 				98331AC41FDA9AF000DC3E98 /* SystemConfiguration.framework */,
@@ -448,6 +481,10 @@
 				986768E41FE2763A00866969 /* DataStateModel.swift */,
 				98C0E5421FE36A1300CA496E /* MapModel.swift */,
 				98E5B0FB1FE4B04600338E95 /* AlarmChartModel.swift */,
+				9860E06C1FE7612000394312 /* CanHistoryModel.swift */,
+				9860E0701FE78DD600394312 /* DeviceInspectModel.swift */,
+				9860E08A1FE7BE1D00394312 /* InspectDetailAdapterModel.swift */,
+				981D79EB1FE8D2A90084D19D /* SocketRequestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +500,7 @@
 		98331AF01FDA9EA600DC3E98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				982463B91FE747FE001AC9F7 /* ImagePreviewVC.swift */,
 				98331AFC1FDA9F0E00DC3E98 /* TableViewCell */,
 				98331AF11FDA9EAC00DC3E98 /* TabBarView */,
 				98D9BC951FE502240080C439 /* Widget */,
@@ -478,6 +516,8 @@
 				98C0E5B01FE3EB4E00CA496E /* CarAlarmChartController.swift */,
 				98D9BC531FE4F99A0080C439 /* AlarmListViewController.swift */,
 				98D9BCB91FE51C9B0080C439 /* AlarmDetailViewController.swift */,
+				9860E06E1FE78D3000394312 /* InspectViewController.swift */,
+				9860E0861FE7BAE300394312 /* InspectDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,6 +541,9 @@
 				986BD8261FDFD69C009380FA /* DeviceFilterViewCell.swift */,
 				981A03401FE1687B00BD5121 /* DevicerViewCell.swift */,
 				98D9BCB61FE506880080C439 /* AlarmListTableViewCell.swift */,
+				982463D71FE74840001AC9F7 /* ImagePreviewCell.swift */,
+				9860E0841FE7B62600394312 /* DeviceInspectTableViewCell.swift */,
+				9860E0881FE7BE0700394312 /* InspectDetailTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -558,6 +601,8 @@
 		98C1B6251FD141D5009150CB = {
 			isa = PBXGroup;
 			children = (
+				981D79E81FE8C3DB0084D19D /* GCDAsyncSocket.h */,
+				981D79E91FE8C3DB0084D19D /* GCDAsyncSocket.m */,
 				98C0E5651FE37B3000CA496E /* AMap.bundle */,
 				98331A7E1FDA97D400DC3E98 /* tramcloud-Bridging-Header.h */,
 				988DB7811FDA96A7003709D5 /* Pods.xcodeproj */,
@@ -608,6 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				98D9BCB41FE502480080C439 /* TramCusHeader.swift */,
+				9860E0821FE7A03900394312 /* TGDropBoxView.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -649,6 +695,8 @@
 				98E5B0FF1FE4B1FD00338E95 /* AlarmChartView.swift */,
 				98E5B1011FE4B22D00338E95 /* AlarmListView.swift */,
 				98E5B1031FE4B23C00338E95 /* AlarmDetailView.swift */,
+				9860E06A1FE760EE00394312 /* CanHistoryView.swift */,
+				9860E0721FE7919E00394312 /* DeviceInspectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1052,10 +1100,13 @@
 				98331B151FDA9F7C00DC3E98 /* UIKitUitl.swift in Sources */,
 				98C0E56C1FE3D2AE00CA496E /* PopActionSheet.swift in Sources */,
 				98331B091FDA9F5000DC3E98 /* LoginController.swift in Sources */,
+				9860E06B1FE760EE00394312 /* CanHistoryView.swift in Sources */,
 				98331B061FDA9F5000DC3E98 /* CanHistoryViewController.swift in Sources */,
 				98C0E5641FE3715E00CA496E /* MapPresenter.swift in Sources */,
 				980304EB1FDE34AC0028E766 /* BaseResult.swift in Sources */,
+				982463D81FE74840001AC9F7 /* ImagePreviewCell.swift in Sources */,
 				98E5B1001FE4B1FD00338E95 /* AlarmChartView.swift in Sources */,
+				9860E06F1FE78D3000394312 /* InspectViewController.swift in Sources */,
 				98E5B0F91FE4A49B00338E95 /* LargeValueFormatter.swift in Sources */,
 				98D9BC541FE4F99A0080C439 /* AlarmListViewController.swift in Sources */,
 				98331B081FDA9F5000DC3E98 /* TramUIViewController.swift in Sources */,
@@ -1074,6 +1125,7 @@
 				98E5B0FC1FE4B04600338E95 /* AlarmChartModel.swift in Sources */,
 				98C1B6321FD141D5009150CB /* AppDelegate.swift in Sources */,
 				98C8E6AB1FDAA09B00F869B3 /* SystemViewController.swift in Sources */,
+				9860E06D1FE7612000394312 /* CanHistoryModel.swift in Sources */,
 				98331B0B1FDA9F5000DC3E98 /* DeviceListViewController.swift in Sources */,
 				981A03411FE1687B00BD5121 /* DevicerViewCell.swift in Sources */,
 				98331B141FDA9F7C00DC3E98 /* UIColorUtil.swift in Sources */,
@@ -1081,6 +1133,7 @@
 				981A03391FE13A1800BD5121 /* DeviceListModel.swift in Sources */,
 				986BD8251FDFCE08009380FA /* DeviceFilterPresenter.swift in Sources */,
 				98E5B1041FE4B23C00338E95 /* AlarmDetailView.swift in Sources */,
+				9860E0831FE7A03900394312 /* TGDropBoxView.swift in Sources */,
 				986BD8271FDFD69C009380FA /* DeviceFilterViewCell.swift in Sources */,
 				98B012771FE22A7500CEDE98 /* DeviceFilterResult.swift in Sources */,
 				98331B121FDA9F7C00DC3E98 /* UIImageUtil.swift in Sources */,
@@ -1089,23 +1142,32 @@
 				98C8E6A81FDAA09B00F869B3 /* MapViewController.swift in Sources */,
 				98E96DE81FDF6467000A6B0E /* AccountPresenter.swift in Sources */,
 				981A033F1FE15A1A00BD5121 /* BusDetailView.swift in Sources */,
+				982463BA1FE747FE001AC9F7 /* ImagePreviewVC.swift in Sources */,
+				9860E0871FE7BAE300394312 /* InspectDetailViewController.swift in Sources */,
 				980304631FDE14BA0028E766 /* HomeChartViewModel.swift in Sources */,
+				9860E0891FE7BE0700394312 /* InspectDetailTableViewCell.swift in Sources */,
 				98331B0A1FDA9F5000DC3E98 /* TramTabBarController.swift in Sources */,
 				98C0E5681FE398EF00CA496E /* DateUtil.swift in Sources */,
 				98C0E5B11FE3EB4E00CA496E /* CarAlarmChartController.swift in Sources */,
 				986BD8001FDF7A6A009380FA /* HomeView.swift in Sources */,
 				98D9BCB51FE502480080C439 /* TramCusHeader.swift in Sources */,
 				98C8E6851FDAA02400F869B3 /* ApiManager.swift in Sources */,
+				9860E0711FE78DD600394312 /* DeviceInspectModel.swift in Sources */,
 				986768C21FE24A3B00866969 /* ValueBackDelegate.swift in Sources */,
 				98E5B0FE1FE4B1AC00338E95 /* AlarmPresenter.swift in Sources */,
 				98C0E5431FE36A1300CA496E /* MapModel.swift in Sources */,
+				9860E0731FE7919E00394312 /* DeviceInspectView.swift in Sources */,
+				981D79EC1FE8D2A90084D19D /* SocketRequestModel.swift in Sources */,
 				986768E71FE276F000866969 /* CanPresenter.swift in Sources */,
 				98D9BCBA1FE51C9B0080C439 /* AlarmDetailViewController.swift in Sources */,
 				98C8E6A11FDAA08400F869B3 /* DeviceListTableViewCell.swift in Sources */,
 				98331B131FDA9F7C00DC3E98 /* TramTabBarItem.swift in Sources */,
 				980304EE1FDE35D60028E766 /* UserViewModel.swift in Sources */,
 				986768E31FE270E200866969 /* CanModel.swift in Sources */,
+				9860E0851FE7B62600394312 /* DeviceInspectTableViewCell.swift in Sources */,
+				9860E08B1FE7BE1D00394312 /* InspectDetailAdapterModel.swift in Sources */,
 				986BD8211FDFAB6E009380FA /* DeviceFilterController.swift in Sources */,
+				981D79EA1FE8C3DB0084D19D /* GCDAsyncSocket.m in Sources */,
 				98C8E6A71FDAA09B00F869B3 /* CanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let StatusHeight = UIApplication.shared.statusBarFrame.height
     var BaseUrl:String = "http://112.94.162.133:8089"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         AMapServices.shared().apiKey = "5dc5cd0d8f46b98e2468caf44be0fc08"
         self.window = UIWindow(frame:UIScreen.main.bounds)
         let userInfo = UserDefaultUtil.getNormalUserDefault("userinfo") as! String

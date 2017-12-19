@@ -20,7 +20,7 @@ class AlarmDetailViewController: TramUIViewController {
     var organzationName:UILabel!
     var AlarmName:UILabel!
     var AlarmTime:UILabel!
-    
+    var HostImageArr:[String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initView()
@@ -30,11 +30,11 @@ class AlarmDetailViewController: TramUIViewController {
     func initView(){
         let height = bounds.height - AppDelegate().StatusHeight - (self.navigationController?.navigationBar.frame.size.height)!
         let baseView = UIKitUtil.CreateUiView(self.view, x: 0, y: 0, width: bounds.width, height: height, backgroundColor: "dedede")
-        let imageLayout = UIKitUtil.CreateUiView(baseView, x: 10, y: 10, width: bounds.width-20, height: 100, backgroundColor: "dedede")
+        let imageLayout = UIKitUtil.CreateUiView(baseView, x: 10, y: 10, width: bounds.width-20, height: 110, backgroundColor: "dedede")
         let imgWidth = (bounds.width-20-10)/3
-        imageView1 = UIKitUtil.CreateUIImageButton(imageLayout, text: "", x: 0, y: 0, width: imgWidth, height: 100, textColor: "ffffff", textSize: 13, tag: 1, backgroundImageName: "", isShowText: false, selector: #selector(Handle(_:)), target: self)
-        imageView2 = UIKitUtil.CreateUIImageButton(imageLayout, text: "", x: imgWidth+5, y: 0, width: imgWidth, height: 100, textColor: "ffffff", textSize: 13, tag: 2, backgroundImageName: "", isShowText: false, selector: #selector(Handle(_:)), target: self)
-        imageView3 = UIKitUtil.CreateUIImageButton(imageLayout, text: "", x: (imgWidth+5)*2, y: 0, width: imgWidth, height: 100, textColor: "ffffff", textSize: 13, tag: 3, backgroundImageName: "", isShowText: false, selector: #selector(Handle(_:)), target: self)
+        imageView1 = UIKitUtil.CreateUIImageButton(imageLayout, text: "", x: 0, y: 0, width: imgWidth, height: 100, textColor: "ffffff", textSize: 13, tag: 0, backgroundImageName: "", isShowText: false, selector: #selector(Handle(_:)), target: self)
+        imageView2 = UIKitUtil.CreateUIImageButton(imageLayout, text: "", x: imgWidth+5, y: 0, width: imgWidth, height: 100, textColor: "ffffff", textSize: 13, tag: 1, backgroundImageName: "", isShowText: false, selector: #selector(Handle(_:)), target: self)
+        imageView3 = UIKitUtil.CreateUIImageButton(imageLayout, text: "", x: (imgWidth+5)*2, y: 0, width: imgWidth, height: 100, textColor: "ffffff", textSize: 13, tag: 2, backgroundImageName: "", isShowText: false, selector: #selector(Handle(_:)), target: self)
         let view1 = UIKitUtil.CreateUiView(baseView, x: 0, y: 110, width: bounds.width, height: 40, backgroundColor: "ffffff")
         let label1 = UIKitUtil.CreateUILable(view1, text: "设备编号", x: 10, y: 0, width: 100, height: 40, textColor: "000000", textSize: 14, textAlign: .left)
         deviceCode = UIKitUtil.CreateUILable(view1, text: "", x: bounds.width-140, y: 0, width: 130, height: 40, textColor: "000000", textSize: 14, textAlign: .right)
@@ -65,8 +65,12 @@ extension AlarmDetailViewController{
     func loadData(){
         var imageArr = [String]()
         imageArr = alarmModel.AlarmValue.components(separatedBy: ",")
-        //imageView1.imageView!.kf.setImage(with:  AppDelegate().BaseUrl+imageArr[0] as? Resource)
-        //imageView2.imageView!.kf.setImage(with:  AppDelegate().BaseUrl+imageArr[1] as? Resource)
+        HostImageArr.append(AppDelegate().BaseUrl+imageArr[0])
+        HostImageArr.append(AppDelegate().BaseUrl+imageArr[1])
+        let resource1 = ImageResource(downloadURL: URL(string: HostImageArr[0])!)
+        let resource2 = ImageResource(downloadURL: URL(string: HostImageArr[1])!)
+        imageView1.kf.setBackgroundImage(with: resource1, for: .normal)
+        imageView2.kf.setBackgroundImage(with: resource2, for: .normal)
         imageView3.isHidden = true
         deviceCode.text = alarmModel.DeviceCode
         busNumber.text = alarmModel.BusNumber
@@ -78,6 +82,12 @@ extension AlarmDetailViewController{
     }
     
     @objc func Handle(_ sender:UIButton){
-        
+        //图片索引
+        let index = sender.tag
+        //进入图片全屏展示
+        let previewVC = ImagePreviewVC(images: self.HostImageArr, index: index)
+        previewVC.title = "图片预览"
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(previewVC, animated: true)
     }
 }

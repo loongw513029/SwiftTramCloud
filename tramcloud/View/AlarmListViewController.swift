@@ -33,9 +33,9 @@ class AlarmListViewController: TramUIViewController {
     }
     func initView(){
         createTableHeader(self.view)
-        let height = bounds.height - AppDelegate().StatusHeight - (self.navigationController?.navigationBar.frame.size.height)!-30
-        let baseView = UIKitUtil.CreateUiView(self.view, x: 0, y: 0, width: bounds.width, height: height-30, backgroundColor: "ffffff")
-        self.tableView = UITableView(frame:CGRect(x:0,y:30,width:bounds.width,height:height))
+        let height = bounds.height - AppDelegate().StatusHeight - (self.navigationController?.navigationBar.frame.size.height)!
+        let baseView = UIKitUtil.CreateUiView(self.view, x: 0, y: 0, width: bounds.width, height: height, backgroundColor: "ffffff")
+        self.tableView = UITableView(frame:CGRect(x:0,y:0,width:bounds.width,height:height))
         tableView.register(AlarmListTableViewCell.self, forCellReuseIdentifier: "cell")
         header.setRefreshingTarget(self, refreshingAction: #selector(headerRefresh))
         footer.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
